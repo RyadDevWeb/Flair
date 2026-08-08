@@ -189,11 +189,11 @@ let works: [Work] = {
         characters: frierenCharacters,
         datesChronology: frierenEvents,
         organizations: frierenOrganizations,
-        streamingPlatforms: ["Crunchyroll"],
+        streamingPlatforms: ["logo_crunchyroll", "logo_disney_plus", "logo_canal_vod", "logo_netflix", "logo_prime_video"],
         duration: 24,
         url: URL(
             string:
-                "https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end"
+                "https://www.youtube.com/watch?v=Iwr1aLEDpe4"
         )
     )
     
@@ -379,11 +379,11 @@ let works: [Work] = {
         characters: jujutsuCharacters,
         datesChronology: jujutsuEvents,
         organizations: jujutsuOrganizations,
-        streamingPlatforms: ["Crunchyroll"],
+        streamingPlatforms: ["logo_crunchyroll", "logo_disney_plus", "logo_canal_vod", "logo_netflix", "logo_prime_video"],
         duration: 24,
         url: URL(
             string:
-                "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen"
+                "https://www.youtube.com/watch?v=ztO4Bk0ALGI"
         )
     )
     
@@ -565,11 +565,11 @@ let works: [Work] = {
         characters: shieldCharacters,
         datesChronology: shieldEvents,
         organizations: shieldOrganizations,
-        streamingPlatforms: ["Crunchyroll"],
+        streamingPlatforms: ["logo_crunchyroll", "logo_disney_plus", "logo_canal_vod", "logo_netflix", "logo_prime_video"],
         duration: 24,
         url: URL(
             string:
-                "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero"
+                "https://www.youtube.com/watch?v=WJVyL6bzS3s"
         )
     )
     
@@ -746,9 +746,9 @@ let works: [Work] = {
         characters: witcherCharacters,
         datesChronology: witcherEvents,
         organizations: witcherOrganizations,
-        streamingPlatforms: ["Netflix"],
+        streamingPlatforms: ["logo_crunchyroll", "logo_disney_plus", "logo_canal_vod", "logo_netflix", "logo_prime_video"],
         duration: 55,
-        url: URL(string: "https://www.netflix.com/title/80189685")
+        url: URL(string: "https://www.youtube.com/watch?v=bGFpSNKtLlc")
     )
     
         // MARK: - Star Wars: Starfighter
@@ -941,4 +941,4 @@ let works: [Work] = {
 
 let user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
 
-let userLogged: User = User(name: "Lloys", image: "frieren-character", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
+var userLogged: User = User(name: "Lloys", image: "frieren-character", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
