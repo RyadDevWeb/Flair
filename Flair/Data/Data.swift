@@ -189,7 +189,7 @@ let works: [Work] = {
         characters: frierenCharacters,
         datesChronology: frierenEvents,
         organizations: frierenOrganizations,
-        streamingPlatforms: ["Crunchyroll"],
+        streamingPlatforms: ["logo_crunchyroll", "logo_disney_plus", "logo_canal_vod", "logo_netflix", "logo_prime_video"],
         duration: 24,
         url: URL(
             string:
