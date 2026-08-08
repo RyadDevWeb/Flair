@@ -2,7 +2,7 @@
 //  RootView.swift
 //  flair
 //
-//  Created by Apprenant131 on 31/07/2026.
+//  Created by imane on 31/07/2026.
 //
 
 import SwiftUI

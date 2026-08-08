@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FlairApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let work : Work = works[0]
+            WorkDetailView(work: work)
         }
     }
 }

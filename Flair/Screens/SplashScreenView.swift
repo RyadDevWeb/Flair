@@ -1,3 +1,10 @@
+//
+//  SplashScreenView.swift
+//  flair
+//
+//  Created by imane on 31/07/2026.
+//
+
 import SwiftUI
 
 struct SplashScreenView: View {
