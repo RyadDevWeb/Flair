@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkDetailCard: View {
 
-    let nbr: Int?
+    let nbr: String
     let detail: String
     
     private var viewModel : WorkDetailViewModel {
@@ -21,7 +21,7 @@ struct WorkDetailCard: View {
     var body: some View {
 
         VStack(spacing: 4) {
-            Text(String(nbr ?? 0))
+            Text(nbr)
                 .font(.largeTitle)
                 .bold()
 
@@ -44,7 +44,7 @@ struct WorkDetailCard: View {
 
 #Preview {
     WorkDetailCard(
-        nbr: 2,
+        nbr: "2",
         detail: "Saisons",
         work: works[0]
     )

@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct WorkDetailTitle: View {
+    
     var text : String
     
     var body: some View {
         
         HStack {
+            
             WorkQuoteBar()
                 
             Text(text)
                 .font(.custom("Archivo-Black", size: 22))
             
             Spacer()
+            
         }
-        
     }
 }
 

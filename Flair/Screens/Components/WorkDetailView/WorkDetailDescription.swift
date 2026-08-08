@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkDetailDescription: View {
     
-    var work : Work
+    let work : Work
     
     var body: some View {
         Text(work.summary)

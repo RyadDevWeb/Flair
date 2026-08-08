@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkTypeBadge: View {
 
-    var work: Work
+    let work: Work
     
     private var viewModel : WorkDetailViewModel {
         WorkDetailViewModel(work: work)

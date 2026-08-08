@@ -5,7 +5,6 @@
 //  Created by imane on 29/07/2026.
 //
 
-import AVKit
 import SwiftUI
 
 struct WorkDetailView: View {
@@ -37,7 +36,7 @@ struct WorkDetailView: View {
                     .padding(.top, 24)
 
                 // Bouttons
-                WorkDetailButtons()
+                WorkDetailButtons(work: work)
 
                 MainButton(text: "Explorer l'univers")
 
@@ -48,28 +47,24 @@ struct WorkDetailView: View {
                 HStack(spacing: 24) {
 
                     WorkDetailCard(
-                        nbr: work.nbSeasons,
-                        detail: viewModel.seasonFormatted,
+                        nbr: viewModel.primaryDetail.value,
+                        detail: viewModel.primaryDetail.label,
+                        work: work
+                    )
+                    
+                    WorkDetailCard(
+                        nbr: viewModel.secondaryDetail.value,
+                        detail: viewModel.secondaryDetail.label,
                         work: work
                     )
 
-                    WorkDetailCard(
-                        nbr: work.nbEpisodes,
-                        detail: viewModel.episodeFormatted,
-                        work: work
-                    )
                 }
 
                 // Trailer
-                if let url = viewModel.urlFormatted {
-                    WorkDetailTitle(text: "Trailer")
+                WorkDetailTrailer(work: work)
 
-                    VideoPlayer(player: AVPlayer(url: url))
-                        .frame(height: 206)
-                }
-
-                // Plateformes de streamings (SÉPARER LOGIQUE ‼️)
-                if !work.streamingPlatforms.isEmpty {
+                // Plateformes de streamings
+                if viewModel.hasStreamingPlatforms {
 
                     WorkDetailTitle(text: "Plateformes de streaming")
 
@@ -77,6 +72,7 @@ struct WorkDetailView: View {
 
                         HStack(spacing: 12) {
 
+                            // Logos plateformes
                             ForEach(work.streamingPlatforms, id: \.self) {
                                 plateforme in
 
@@ -86,24 +82,34 @@ struct WorkDetailView: View {
                                     .frame(width: 58, height: 58)
                                     .padding(.trailing, 25)
                             }
-                        }.frame(maxWidth: .infinity)
-                    }.scrollIndicators(.hidden)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 24)
+                    }
+                    .scrollIndicators(.hidden)
                 }
             }
             .padding(.horizontal, 16)
         }
         .ignoresSafeArea()
+        .scrollIndicators(.hidden)
     }
 }
 
 #Preview {
-    WorkDetailView(work: works[0])
+    NavigationStack {
+        WorkDetailView(work: works[0])
+    }
 }
 
 #Preview {
-    WorkDetailView(work: works[3])
+    NavigationStack {
+        WorkDetailView(work: works[3])
+    }
 }
 
 #Preview {
-    WorkDetailView(work: works[4])
+    NavigationStack {
+        WorkDetailView(work: works[4])
+    }
 }

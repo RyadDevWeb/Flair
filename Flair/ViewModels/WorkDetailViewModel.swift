@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-
 struct WorkDetailViewModel {
     
     let work: Work
+
     
-    // Gestion couleurs des badges
+    // Badge
     func badgeColor(_ type: Types) -> Color {
         
         switch type {
@@ -25,51 +25,95 @@ struct WorkDetailViewModel {
         }
     }
     
-    // Séparateur + genres
+    // Genres
     func genresSeparator(_ genres: [Genre]) -> String? {
-        
         genres.map { $0.rawValue }
             .joined(separator: " • ")
-        
     }
     
-    // Gestions des nils
-    var seasonCount: Int {
+    // Series / Anime
+    var numberOfSeasons: Int {
         work.nbSeasons ?? 0
     }
     
-    var episodeCount: Int {
+    var numberOfEpisodes: Int {
         work.nbEpisodes ?? 0
     }
     
-    // saison(s)
-    func formattedSeasons(_ nbSeasons: Int) -> String {
-        if nbSeasons > 1 {
-            return "Saisons"
+    func seasonLabel(_ numberOfSeasons: Int) -> String {
+        numberOfSeasons > 1 ? "Saisons" : "Saison"
+    }
+    
+    var formattedSeasonLabel: String {
+        seasonLabel(numberOfSeasons)
+    }
+    
+    func episodeLabel(_ numberOfEpisodes: Int) -> String {
+        numberOfEpisodes > 1 ? "Épisodes" : "Épisode"
+    }
+    
+    var formattedEpisodeLabel: String {
+        episodeLabel(numberOfEpisodes)
+    }
+    
+    // Film
+    var formattedDuration: String {
+        let hours = work.duration / 60
+        let minutes = work.duration % 60
+        
+        if hours > 0 {
+            return "\(hours)h \(minutes)"
+        } else if hours < 0 {
+            return "\(minutes) min"
         } else {
-            return "Saison"
+            return "N/C"
         }
     }
     
-    var seasonFormatted: String {
-        formattedSeasons(seasonCount)
+    var formattedReleaseYear: String {
+        work.airedDate.formatted(.dateTime.year())
     }
     
-    // épisode(s)
-    func formattedEpisodes(_ nbEpisodes: Int) -> String {
-        if nbEpisodes > 1 {
-            return "Épisodes"
-        } else {
-            return "Épisode"
+    // Details cards
+    var primaryDetail: (value: String, label: String) {
+        
+        switch work.type {
+        case .anime, .series:
+            return ( String(numberOfSeasons), formattedSeasonLabel )
+        case .movie:
+            return ( formattedDuration, "Durée" )
         }
     }
     
-    var episodeFormatted: String {
-        formattedEpisodes(episodeCount)
+    var secondaryDetail: (value: String, label: String) {
+        
+        switch work.type {
+        case .anime, .series:
+            return ( String(numberOfEpisodes), formattedEpisodeLabel )
+        case .movie:
+            return ( formattedReleaseYear, "Sortie" )
+        }
     }
     
-    // Vidéo
-    var urlFormatted : URL? {
-        work.url
+    // Streaming
+    var hasStreamingPlatforms: Bool {
+        !work.streamingPlatforms.isEmpty
+    }
+    
+    // BOUTONS
+    
+    // Favoris
+    var isFavorite : Bool {
+        userLogged.favoriteWorks.contains { $0.id == work.id }
+    }
+    
+    func toggleFavorite(_ work: Work) {
+        if isFavorite {
+            if let index = user.favoriteWorks.firstIndex(where: { $0.id == work.id }) {
+                userLogged.favoriteWorks.remove(at: index)
+            }
+        } else {
+            userLogged.favoriteWorks.append(work)
+        }
     }
 }
