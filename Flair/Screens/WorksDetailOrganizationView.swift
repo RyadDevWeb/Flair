@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct WorksDetailOrganizationView: View {
+    
+    let workOrganization : WorkOrganization
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
     }
 }
 
 #Preview {
-    WorksDetailOrganizationView()
+    WorksDetailOrganizationView(workOrganization: works[0].organizations[0])
 }

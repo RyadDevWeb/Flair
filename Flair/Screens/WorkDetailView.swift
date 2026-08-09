@@ -38,7 +38,10 @@ struct WorkDetailView: View {
                 // Bouttons
                 WorkDetailButtons(work: work)
 
-                MainButton(text: "Explorer l'univers")
+                MainButton(
+                    text: "Explorer l'univers",
+                    work : work
+                )
 
                 // Description
                 WorkDetailDescription(work: work)
@@ -99,17 +102,17 @@ struct WorkDetailView: View {
 #Preview {
     NavigationStack {
         WorkDetailView(work: works[0])
-    }
+    } .navigationTitle("Explorer mon univers")
 }
 
 #Preview {
     NavigationStack {
         WorkDetailView(work: works[3])
-    }
+    } .navigationTitle("Explorer mon univers")
 }
 
 #Preview {
     NavigationStack {
         WorkDetailView(work: works[4])
-    }
+    } .navigationTitle("Explorer mon univers")
 }
