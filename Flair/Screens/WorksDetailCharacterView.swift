@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct WorksDetailCharacterView: View {
+    
+    let workCharacter : WorkCharacter
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    WorksDetailCharacterView()
+    WorksDetailCharacterView(workCharacter: works[0].characters[0])
 }
+
