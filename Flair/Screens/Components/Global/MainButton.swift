@@ -10,11 +10,12 @@ import SwiftUI
 struct MainButton: View {
 
     var text: String
-
+    let work : Work
+    
     var body: some View {
 
         NavigationLink {
-            WorkTableView()
+            WorkTableView(work: work)
         } label: {
             Text(text)
                 .font(.title3)
@@ -31,6 +32,9 @@ struct MainButton: View {
 
 #Preview {
     NavigationStack {
-        MainButton(text: "Explorer l'univers")
-    }
+        MainButton(
+            text: "Explorer l'univers",
+            work : works[0]
+        )
+    } .navigationTitle("Explorer mon univers")
 }

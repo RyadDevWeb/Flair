@@ -2,7 +2,7 @@
 //  WorkDetailTitle.swift
 //  Flair
 //
-//  Created by Apprenant131 on 08/08/2026.
+//  Created by imane on 08/08/2026.
 //
 
 import SwiftUI

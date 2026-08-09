@@ -17,14 +17,14 @@ struct WorkTypeBadge: View {
 
     var body: some View {
 
-        RoundedRectangle(cornerRadius: 12)
+        RoundedRectangle(cornerRadius: 8)
             .overlay(
                 Text(work.type.rawValue.uppercased())
                     .font(.caption2)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.textPrimary)
                     .bold()
             )
-            .frame(width: 48, height: 18)
+            .frame(width: 54, height: 24)
             .foregroundStyle(viewModel.badgeColor(work.type))
     }
 }
