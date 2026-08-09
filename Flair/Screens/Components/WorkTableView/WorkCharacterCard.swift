@@ -27,13 +27,14 @@ struct WorkCharacterCard: View {
             .overlay(alignment: .bottomLeading) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(workCharacter.name)
-                        .font(.title2)
-                        .bold()
+                        .font(.custom("Archivo-Black", size: 20))
                         .foregroundStyle(.textPrimary)
+                        .lineLimit(1)
                     
                     Text(workCharacter.summary)
-                        .font(.caption2)
+                        .font(.footnote)
                         .foregroundStyle(.textSecondary)
+                        .lineLimit(2)
                 }
                 .padding()
 

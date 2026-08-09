@@ -36,7 +36,7 @@ struct WorkTableView: View {
                             
                             NavigationLink(destination: WorksDetailLocationView(workLocation: location)) {
                                 WorkLocationCard(workLocation: location)
-                            }
+                            } .buttonStyle(.plain)
                         }
                     }
                 }.scrollIndicators(.hidden)
@@ -59,7 +59,7 @@ struct WorkTableView: View {
                             character in
                             NavigationLink(destination: WorksDetailCharacterView(workCharacter : character)) {
                                 WorkCharacterCard(workCharacter: character)
-                            }
+                            } .buttonStyle(.plain)
                         }
                     }
                 }.scrollIndicators(.hidden)
@@ -80,7 +80,8 @@ struct WorkTableView: View {
                             NavigationLink(destination: WorksDetailTimelineView(workEvent : chronology)) {
                                 WorkEventCard(workEvent: chronology)
                             }
-                                .padding(.bottom, 24)
+                            .buttonStyle(.plain)
+                            .padding(.bottom, 24)
                         }
                 
                                     
@@ -102,18 +103,44 @@ struct WorkTableView: View {
                             organization in
                             NavigationLink(destination: WorksDetailOrganizationView(workOrganization : organization)) {
                                 WorkOrganizationCard(workOrganization: organization)
-                            }
+                            } .buttonStyle(.plain)
                         }
                     }
                 }.scrollIndicators(.hidden)
                 
-            }.padding(.horizontal, 16)
-        }
+            }
+            .padding(.horizontal, 16)
+            .navigationTitle(work.title)
+        } .scrollIndicators(.hidden)
     }
 }
 
 #Preview {
     NavigationStack {
         WorkTableView(work: works[0])
+    }
+}
+
+#Preview {
+    NavigationStack {
+        WorkTableView(work: works[1])
+    }
+}
+
+#Preview {
+    NavigationStack {
+        WorkTableView(work: works[2])
+    }
+}
+
+#Preview {
+    NavigationStack {
+        WorkTableView(work: works[3])
+    }
+}
+
+#Preview {
+    NavigationStack {
+        WorkTableView(work: works[4])
     }
 }

@@ -28,9 +28,9 @@ struct WorkLocationCard: View {
                 VStack(alignment: .leading, spacing: 16) {
                     WorkLocationBadge(workLocation: workLocation)
                     Text(workLocation.name)
-                        .font(.title2)
-                        .bold()
+                        .font(.custom("Archivo-Black", size: 20))
                         .foregroundStyle(.textPrimary)
+                        .lineLimit(1)
                 }
                 .padding()
 

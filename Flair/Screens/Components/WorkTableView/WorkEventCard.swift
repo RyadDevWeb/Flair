@@ -27,16 +27,18 @@ struct WorkEventCard: View {
             .overlay(alignment: .bottomLeading) {
                 VStack(alignment: .leading, spacing: 16) {
                     Text(String(workEvent.year))
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(.textPrimary)
+                        .font(.custom("Archivo-Black", size: 44))
+                        .foregroundStyle(.yellowPrimary)
                     
                     Text(workEvent.title)
-                        .font(.title2)
-                        .bold()
+                        .font(.custom("Archivo-Black", size: 20))
                         .foregroundStyle(.textPrimary)
+                        .lineLimit(1)
                     
                     Text(workEvent.period)
+                        .foregroundStyle(.textSecondary)
+                        .font(.footnote)
+                        .lineLimit(1)
                 }
                 .padding()
                 

@@ -73,7 +73,7 @@ struct WorkDetailView: View {
 
                     ScrollView(.horizontal) {
 
-                        HStack(spacing: 12) {
+                        HStack(alignment : .center, spacing: 8) {
 
                             // Logos plateformes
                             ForEach(work.streamingPlatforms, id: \.self) {
@@ -102,6 +102,18 @@ struct WorkDetailView: View {
 #Preview {
     NavigationStack {
         WorkDetailView(work: works[0])
+    } .navigationTitle("Explorer mon univers")
+}
+
+#Preview {
+    NavigationStack {
+        WorkDetailView(work: works[1])
+    } .navigationTitle("Explorer mon univers")
+}
+
+#Preview {
+    NavigationStack {
+        WorkDetailView(work: works[2])
     } .navigationTitle("Explorer mon univers")
 }
 
