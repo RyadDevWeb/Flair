@@ -84,7 +84,7 @@ let works: [Work] = {
                 "Guerrier humain puissant qui accompagne Frieren et Fern.",
             description:
                 "Stark est le disciple d'Eisen, le guerrier nain du groupe des héros, qui l'a soumis à un entraînement si rigoureux que son corps peut encaisser des blessures auxquelles peu d'aventuriers survivraient. Chassé très jeune de son village détruit par les démons, il porte une peur profonde de l'échec et se décrit volontiers comme un lâche, alors même qu'il choisit presque toujours de rester lorsque les autres ont besoin de lui. Sa véritable bravoure ne réside donc pas dans l'absence de peur, mais dans sa capacité à avancer malgré elle. Armé de sa grande hache, Stark attire l'attention des monstres, brise leurs défenses et offre à Frieren et Fern l'espace nécessaire pour lancer leurs sorts. Sa gentillesse spontanée lui permet aussi de nouer des liens dans chaque ville traversée ; sous les disputes comiques avec Fern apparaît un jeune homme qui cherche peu à peu sa propre place dans l'héritage d'Eisen.",
-            cover: "stark-cover",
+            cover: "frieren-stark-cover",
             identityImage: "stark-id_card",
             detailImage: "stark-character",
             todayImage: "stark-today",
@@ -939,6 +939,6 @@ let works: [Work] = {
     return [frieren, jujutsuKaisen, shieldHero, theWitcher, starfighter]
     }()
 
-let user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
+var user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
 
 var userLogged: User = User(name: "Lloys", image: "frieren-character", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
