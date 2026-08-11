@@ -6,13 +6,6 @@
 //
 
 
-//
-//  QuestionHeaderView.swift
-//  Flair
-//
-//  Created by Apprenant154 on 10/08/2026.
-//
-
 import SwiftUI
 
 /// Affiche le titre d'une question de l'onboarding,
