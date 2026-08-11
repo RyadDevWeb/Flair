@@ -5,7 +5,6 @@
 //  Created by Apprenant154 on 07/08/2026.
 //
 import Foundation
-import Observation
 
 @Observable
 class User: Identifiable {
@@ -17,10 +16,10 @@ class User: Identifiable {
     var favoriteGenres: [Genre]
     var favoriteWorks: [Work]
     /// Notion [Oeuvre]
-    let statCharacter: Int
-    let statOrganization: Int
-    let statLocation: Int
-    let statChronology: Int
+    var statCharacter: Int
+    var statOrganization: Int
+    var statLocation: Int
+    var statChronology: Int
     
     init(
         name: String,

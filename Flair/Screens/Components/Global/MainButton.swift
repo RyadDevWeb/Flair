@@ -15,7 +15,8 @@ struct MainButton: View {
     var body: some View {
 
         NavigationLink {
-            WorkTableView(work: work)
+            WorkTableView(
+                work: work)
         } label: {
             Text(text)
                 .font(.title3)

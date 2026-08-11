@@ -8,30 +8,38 @@
 import SwiftUI
 
 struct WorkOrganizationsGridView: View {
-    
-    let workOrganizations : [WorkOrganization]
-    
+
+    let workOrganizations: [WorkOrganization]
+
     let colums = [
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    
+
     var body: some View {
-        
+
         ScrollView {
-            
+
             LazyVGrid(columns: colums, spacing: 16) {
                 ForEach(workOrganizations) {
                     organization in
-                    WorkOrganizationCard(workOrganization: organization)
+                    NavigationLink(
+                        destination: WorksDetailOrganizationView(
+                            workOrganization: organization
+                        )
+                    ) {
+                        WorkOrganizationCard(workOrganization: organization)
+                    }
+                    .navigationTitle("Organisations")
                 }
-            }
-            
-        } .scrollIndicators(.hidden)
-        
+
+            }.scrollIndicators(.hidden)
+        }
     }
 }
 
 #Preview {
-    WorkOrganizationsGridView(workOrganizations: works[0].organizations)
+    NavigationStack {
+        WorkOrganizationsGridView(workOrganizations: works[0].organizations)
+    }
 }

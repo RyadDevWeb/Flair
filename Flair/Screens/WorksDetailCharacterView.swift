@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct WorksDetailCharacterView: View {
-    
 
     let workCharacter : WorkCharacter
 

@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct WorkCharactersGridView: View {
-    
+
     let workCharacters: [WorkCharacter]
 
     let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
+        GridItem(.flexible(), spacing: 8),
+        GridItem(.flexible(), spacing: 8)
     ]
 
     var body: some View {
 
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 16) {
+            LazyVGrid(
+                columns: columns,
+                spacing: 24
+            ) {
                 ForEach(workCharacters) { character in
-                    WorkCharacterCard(workCharacter: character)
+                    NavigationLink {
+                        WorksDetailCharacterView(
+                            workCharacter: character
+                        )
+                    } label: {
+                        WorkCharacterCard(
+                            workCharacter: character
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .navigationTitle("Personnages")
                 }
             }
             .padding(16)
@@ -30,5 +43,7 @@ struct WorkCharactersGridView: View {
 }
 
 #Preview {
-    WorkCharactersGridView(workCharacters : works[0].characters)
+    NavigationStack {
+        WorkCharactersGridView(workCharacters: works[0].characters)
+    }
 }
