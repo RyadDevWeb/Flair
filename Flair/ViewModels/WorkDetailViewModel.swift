@@ -76,7 +76,6 @@ struct WorkDetailViewModel {
     
     // Details cards
     var primaryDetail: (value: String, label: String) {
-        
         switch work.type {
         case .anime, .series:
             return ( String(numberOfSeasons), formattedSeasonLabel )

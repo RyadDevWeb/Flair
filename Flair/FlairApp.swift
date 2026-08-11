@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct FlairApp: App {
-    
-    
+
     var body: some Scene {
+        
         WindowGroup {
-            let work : Work = works[0]
-            WorkDetailView(work: work)
+            NavigationStack {
+                WorkDetailView(work: works.first!)
+            }
         }
+        .environment(user)
     }
 }

@@ -4,6 +4,7 @@
 //
 //  Created by Apprenant154 on 07/08/2026.
 //
+
 import Foundation
 
 enum Types: String, CaseIterable {

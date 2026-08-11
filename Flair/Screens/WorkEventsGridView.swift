@@ -16,14 +16,20 @@ struct WorkEventsGridView: View {
         ScrollView {
             VStack(spacing: 24) {
                 ForEach(workEvents) { event in
-                    WorkEventCard(workEvent: event)
+                    NavigationLink(
+                        destination: WorksDetailTimelineView(workEvent: event)
+                    ) {
+                        WorkEventCard(workEvent: event)
+                    } .navigationTitle("Chronologie")
                 }
-            }
-            .padding(16)
-        }.scrollIndicators(.hidden)
+                .padding(16)
+            }.scrollIndicators(.hidden)
+        }
     }
 }
 
 #Preview {
-    WorkEventsGridView(workEvents: works[0].datesChronology)
+    NavigationStack {
+        WorkEventsGridView(workEvents: works[0].datesChronology)
+    }
 }

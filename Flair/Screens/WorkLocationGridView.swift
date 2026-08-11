@@ -21,7 +21,13 @@ struct WorkLocationGridView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(workLocations) { location in
-                    WorkLocationCard(workLocation: location)
+                    NavigationLink(
+                        destination: WorksDetailLocationView(
+                            workLocation: location
+                        )
+                    ) {
+                        WorkLocationCard(workLocation: location)
+                    } .navigationTitle("Lieux")
                 }
             }
             .padding(16)
@@ -30,5 +36,7 @@ struct WorkLocationGridView: View {
 }
 
 #Preview {
-    WorkLocationGridView(workLocations: works[0].locations)
+    NavigationStack {
+        WorkLocationGridView(workLocations: works[0].locations)
+    }
 }

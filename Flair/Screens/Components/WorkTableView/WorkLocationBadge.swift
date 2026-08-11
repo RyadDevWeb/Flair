@@ -8,28 +8,47 @@
 import SwiftUI
 
 struct WorkLocationBadge: View {
-    
-    let workLocation : WorkLocation
-    private var viewModel : WorkTableViewModel {
+
+    let workLocation: WorkLocation
+    private var viewModel: WorkTableViewModel {
         WorkTableViewModel(workLocation: workLocation)
     }
-    
+
     var body: some View {
-        
-        RoundedRectangle(cornerRadius: 8)
-            .overlay(
-                HStack (spacing: 0) {
-                    Label(viewModel.locationIsEmpty.uppercased(), systemImage: "mappin.circle")
-                        .font(.caption2)
-                        .foregroundStyle(.bg)
-                        .bold()
-                }
-            )
-            .frame(width: 140 , height: 24)
-            .foregroundStyle(.yellowPrimary)
+
+        Label(
+            viewModel.locationIsEmpty.uppercased(),
+            systemImage: "mappin.circle"
+        )
+        .font(.caption2)
+        .bold()
+        .foregroundStyle(.bg)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 5)
+        .lineLimit(1)
+        .background {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(.yellowPrimary)
+        }
     }
 }
 
 #Preview {
     WorkLocationBadge(workLocation: works[0].locations[0])
+}
+
+#Preview {
+    WorkLocationBadge(workLocation: works[1].locations[0])
+}
+
+#Preview {
+    WorkLocationBadge(workLocation: works[2].locations[0])
+}
+
+#Preview {
+    WorkLocationBadge(workLocation: works[3].locations[0])
+}
+
+#Preview {
+    WorkLocationBadge(workLocation: works[4].locations[0])
 }
