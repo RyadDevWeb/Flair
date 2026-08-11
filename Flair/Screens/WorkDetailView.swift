@@ -5,7 +5,6 @@
 //  Created by imane on 29/07/2026.
 //
 
-import AVKit
 import SwiftUI
 
 struct WorkDetailView: View {
@@ -18,92 +17,122 @@ struct WorkDetailView: View {
 
     var body: some View {
 
-        ScrollView {
+        NavigationStack {
+            ScrollView {
 
-            // Image
-            ZStack(alignment: .bottomLeading) {
+                // Image
+                ZStack(alignment: .bottomLeading) {
 
-                WorkDetailImage(work: work)
+                    WorkDetailImage(work: work)
 
-                WorkTypeBadge(work: work)
-                    .padding()
+                    WorkTypeBadge(work: work)
+                        .padding()
+                }
+                .ignoresSafeArea()
+
+                VStack(spacing: 24) {
+
+                    // Header
+                    WorkDetailHeader(work: work)
+                        .padding(.top, 24)
+
+                    // Bouttons
+                    WorkDetailButtons(work: work)
+
+                    MainButton(
+                        text: "Explorer l'univers",
+                        work: work
+                    )
+
+                    // Description
+                    WorkDetailDescription(work: work)
+
+                    // Saisons / épisodes / films (A FAIRE ‼️)
+                    HStack(spacing: 24) {
+
+                        WorkDetailCard(
+                            nbr: viewModel.primaryDetail.value,
+                            detail: viewModel.primaryDetail.label,
+                            work: work
+                        )
+
+                        WorkDetailCard(
+                            nbr: viewModel.secondaryDetail.value,
+                            detail: viewModel.secondaryDetail.label,
+                            work: work
+                        )
+
+                    }
+
+                    // Trailer
+                    WorkDetailTrailer(work: work)
+
+                    // Plateformes de streamings
+                    if viewModel.hasStreamingPlatforms {
+
+                        WorkDetailTitle(text: "Plateformes de streaming")
+
+                        ScrollView(.horizontal) {
+
+                            HStack(alignment: .center, spacing: 8) {
+
+                                // Logos plateformes
+                                ForEach(work.streamingPlatforms, id: \.self) {
+                                    plateforme in
+
+                                    Image(plateforme ?? "")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 58, height: 58)
+                                        .padding(.trailing, 25)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.bottom, 24)
+                        }
+                        .scrollIndicators(.hidden)
+                    }
+                }
+                .padding(.horizontal, 16)
             }
             .ignoresSafeArea()
-
-            VStack(spacing: 24) {
-
-                // Header
-                WorkDetailHeader(work: work)
-                    .padding(.top, 24)
-
-                // Bouttons
-                WorkDetailButtons()
-
-                MainButton(text: "Explorer l'univers")
-
-                // Description
-                WorkDetailDescription(work: work)
-
-                // Saisons / épisodes / films (A FAIRE ‼️)
-                HStack(spacing: 24) {
-
-                    WorkDetailCard(
-                        nbr: work.nbSeasons,
-                        detail: viewModel.seasonFormatted,
-                        work: work
-                    )
-
-                    WorkDetailCard(
-                        nbr: work.nbEpisodes,
-                        detail: viewModel.episodeFormatted,
-                        work: work
-                    )
-                }
-
-                // Trailer
-                if let url = viewModel.urlFormatted {
-                    WorkDetailTitle(text: "Trailer")
-
-                    VideoPlayer(player: AVPlayer(url: url))
-                        .frame(height: 206)
-                }
-
-                // Plateformes de streamings (SÉPARER LOGIQUE ‼️)
-                if !work.streamingPlatforms.isEmpty {
-
-                    WorkDetailTitle(text: "Plateformes de streaming")
-
-                    ScrollView(.horizontal) {
-
-                        HStack(spacing: 12) {
-
-                            ForEach(work.streamingPlatforms, id: \.self) {
-                                plateforme in
-
-                                Image(plateforme ?? "")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 58, height: 58)
-                                    .padding(.trailing, 25)
-                            }
-                        }.frame(maxWidth: .infinity)
-                    }.scrollIndicators(.hidden)
-                }
-            }
-            .padding(.horizontal, 16)
+            .scrollIndicators(.hidden)
         }
-        .ignoresSafeArea()
+        .onAppear {
+            print(user.name)
+            user.statCharacter += 1
+            print(user.statCharacter)
+        }
     }
+
 }
 
 #Preview {
-    WorkDetailView(work: works[0])
+    NavigationStack {
+        WorkDetailView(work: works[0])
+    }.navigationTitle("Explorer mon univers")
 }
 
 #Preview {
-    WorkDetailView(work: works[3])
+    NavigationStack {
+        WorkDetailView(work: works[1])
+    }.navigationTitle("Explorer mon univers")
 }
 
 #Preview {
-    WorkDetailView(work: works[4])
+    NavigationStack {
+        WorkDetailView(work: works[2])
+    }.navigationTitle("Explorer mon univers")
+}
+
+#Preview {
+    NavigationStack {
+        WorkDetailView(work: works[3])
+    }.navigationTitle("Explorer mon univers")
+}
+
+#Preview {
+    NavigationStack {
+        WorkDetailView(work: works[4])
+    }.navigationTitle("Explorer mon univers")
 }

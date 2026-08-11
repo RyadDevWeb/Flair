@@ -9,14 +9,20 @@ import SwiftUI
 
 struct WorkDetailButtons: View {
     
+    let work : Work
+    
+    private var viewModel : WorkDetailViewModel{
+        WorkDetailViewModel(work: work)
+    }
+    
     var body: some View {
         
         HStack (alignment: .center, spacing: 24) {
             
             // Partager
-            Button {
-                
-            } label: {
+            ShareLink(
+                item: "Découvre cette univers : \(work.title)"
+            ) {
                 VStack (spacing : 3) {
                     Image(systemName: "square.and.arrow.up")
                     Text("Partager")
@@ -25,10 +31,10 @@ struct WorkDetailButtons: View {
             
             // Favoris
             Button {
-                
+                viewModel.toggleFavorite(work)
             } label: {
                 VStack (spacing : 3) {
-                    Image(systemName: "heart")
+                    Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
                     Text("Favoris")
                 }
             }
@@ -41,5 +47,5 @@ struct WorkDetailButtons: View {
 }
 
 #Preview {
-    WorkDetailButtons()
+    WorkDetailButtons(work : works[0])
 }

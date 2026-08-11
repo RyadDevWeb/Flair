@@ -6,7 +6,8 @@
 //
 import Foundation
 
-struct User: Identifiable {
+@Observable
+class User: Identifiable {
     let id = UUID()
     var name: String
     var image: String
@@ -15,8 +16,32 @@ struct User: Identifiable {
     var favoriteGenres: [Genre]
     var favoriteWorks: [Work]
     /// Notion [Oeuvre]
-    let statCharacter: Int
-    let statOrganization: Int
-    let statLocation: Int
-    let statChronology: Int
+    var statCharacter: Int
+    var statOrganization: Int
+    var statLocation: Int
+    var statChronology: Int
+    
+    init(
+        name: String,
+        image: String,
+        ageRating: Int,
+        favoriteType: Types,
+        favoriteGenres: [Genre],
+        favoriteWorks: [Work],
+        statCharacter: Int,
+        statOrganization: Int,
+        statLocation: Int,
+        statChronology: Int
+    ) {
+        self.name = name
+        self.image = image
+        self.ageRating = ageRating
+        self.favoriteType = favoriteType
+        self.favoriteGenres = favoriteGenres
+        self.favoriteWorks = favoriteWorks
+        self.statCharacter = statCharacter
+        self.statOrganization = statOrganization
+        self.statLocation = statLocation
+        self.statChronology = statChronology
+    }
 }

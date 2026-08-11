@@ -10,27 +10,26 @@ import SwiftUI
 struct MainButton: View {
 
     var text: String
+    let work: Work
 
     var body: some View {
 
         NavigationLink {
-            WorkTableView()
+            WorkTableView(
+                work: work
+            )
         } label: {
             Text(text)
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.bg)
         }
-        .foregroundStyle(.bg)
-        .frame(maxWidth: .infinity)
-        .frame(height: 54)
-        .background(.yellowPrimary)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .buttonStyle(.primary)
     }
 }
 
 #Preview {
     NavigationStack {
-        MainButton(text: "Explorer l'univers")
-    }
+        MainButton(
+            text: "Explorer l'univers",
+            work: works[0]
+        )
+    }.navigationTitle("Explorer mon univers")
 }
