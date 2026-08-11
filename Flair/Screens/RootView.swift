@@ -25,10 +25,12 @@ struct RootView: View {
             } else if hasCompletedOnboarding {
                 ContentView()
             } else {
-                OnBoarding(
-                    questions: Question.staticQuestions,
-                    onCompleted: completeOnboarding
-                )
+                /// WIP du OnBoarding
+//                OnBoarding(
+//                    questions: Question.staticQuestions,
+//                    onCompleted: completeOnboarding
+//                )
+                OnboardingView()
             }
         }
         /// Passage du SplashScreen pour 2 secondes avec un léger fondu
