@@ -149,10 +149,9 @@ struct OnBoarding: View {
     
         /// Enregistre les choix effectués durant l'onboarding
         /// puis indique que celui-ci est terminé.
-    private func finishOnboarding() {
-        appStore.completeOnboarding()
-        onCompleted()
-    }
+private func finishOnboarding() {
+    guard appStore.completeOnboarding() else { return }
+    onCompleted()
 }
 
 private enum NavigationDirection {
