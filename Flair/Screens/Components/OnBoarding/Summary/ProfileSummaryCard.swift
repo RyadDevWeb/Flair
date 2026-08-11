@@ -6,13 +6,6 @@
 //
 
 
-//
-//  ProfileSummaryCard.swift
-//  Flair
-//
-//  Created by Apprenant154 on 11/08/2026.
-//
-
 import SwiftUI
 
 /// Affiche l'identité choisie par l'utilisateur
