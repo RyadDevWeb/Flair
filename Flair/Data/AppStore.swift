@@ -36,6 +36,7 @@ final class AppStore {
         user.image = character.cover
         user.ageRating = ageRating
         user.favoriteType = favoriteType
+        user.favoriteGenres = onboarding.selectedGenres
         user.favoriteWorks = onboarding.selectedWorks
     }
 }
