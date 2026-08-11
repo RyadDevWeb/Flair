@@ -939,6 +939,6 @@ let works: [Work] = {
     return [frieren, jujutsuKaisen, shieldHero, theWitcher, starfighter]
     }()
 
-let user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
+var user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
 
-var userLogged: User = User(name: "Lloys", image: "frieren-character", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
+var userLogged: User = User(name: "Lloys", image: "frieren-frieren-cover", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
