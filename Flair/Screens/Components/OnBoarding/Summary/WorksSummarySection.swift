@@ -5,13 +5,6 @@
 //  Created by Apprenant154 on 11/08/2026.
 //
 
-//
-//  WorksSummarySection.swift
-//  Flair
-//
-//  Created by Apprenant154 on 11/08/2026.
-//
-
 import SwiftUI
 
 /// Affiche les œuvres favorites sélectionnées
