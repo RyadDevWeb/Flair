@@ -108,7 +108,7 @@ struct WorkDetailViewModel {
     
     func toggleFavorite(_ work: Work) {
         if isFavorite {
-            if let index = user.favoriteWorks.firstIndex(where: { $0.id == work.id }) {
+            if let index = userLogged.favoriteWorks.firstIndex(where: { $0.id == work.id }) {
                 userLogged.favoriteWorks.remove(at: index)
             }
         } else {
