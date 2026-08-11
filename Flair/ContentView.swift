@@ -12,16 +12,24 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Tab("Explorer", systemImage: "safari") {
-                ExplorationView()
+                NavigationStack {
+                    ExplorationView()
+                }
             }
             Tab("Découvrir", systemImage: "sparkles") {
-                DiscoverQuizzView()
+                NavigationStack {
+                    DiscoverQuizzView()
+                }
             }
             Tab("Calendrier", systemImage: "calendar") {
-                CalendarView()
+                NavigationStack {
+                    CalendarView()
+                }
             }
             Tab("Profil", systemImage: "person") {
-                ProfilView()
+                NavigationStack {
+                    ProfilView()
+                }
             }
             Tab("Recherche", systemImage: "magnifyingglass", role: .search) {
                 // Afficher la recherche
