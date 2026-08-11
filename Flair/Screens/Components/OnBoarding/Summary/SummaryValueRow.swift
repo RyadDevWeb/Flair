@@ -6,13 +6,6 @@
 //
 
 
-//
-//  SummaryValueRow.swift
-//  Flair
-//
-//  Created by Apprenant154 on 11/08/2026.
-//
-
 import SwiftUI
 
 /// Affiche une valeur simple du récapitulatif
