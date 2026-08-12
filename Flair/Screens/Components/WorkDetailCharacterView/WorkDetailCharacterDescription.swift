@@ -35,7 +35,7 @@ struct WorkDetailCharacterDescription: View {
         .overlay {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(
-                    Color.gray.opacity(0.4),
+                    Color.yellowPrimary.opacity(0.4),
                     lineWidth: 1
                 )
         }

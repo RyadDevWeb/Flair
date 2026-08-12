@@ -32,7 +32,15 @@ struct WorksDetailCharacterView: View {
                         .clipped()
                         .clipShape(
                             RoundedRectangle(cornerRadius: 20)
+                            
                         )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(
+                                    Color.yellowPrimary.opacity(0.4),
+                                    lineWidth: 1
+                                )
+                        }
                 }
                 .frame(height: 280)
                 
@@ -73,7 +81,9 @@ struct WorksDetailCharacterView: View {
                 
                 
                 // Infos en grille
-                
+                WorkDetailCharacterInfoCard(
+                    workCharacter: workCharacter
+                )
                 
                 // Description
                 WorkDetailCharacterDescription(
@@ -93,6 +103,6 @@ struct WorksDetailCharacterView: View {
 #Preview {
     
     WorksDetailCharacterView(
-        workCharacter: works[1].characters[3]
+        workCharacter: works[0].characters[0]
     )
 }
