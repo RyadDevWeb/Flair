@@ -293,7 +293,7 @@ let works: [Work] = {
                 "Frieren est une elfe âgée de plus d'un millénaire, façonnée par la destruction de son village et par l'enseignement de la grande magicienne Flamme. Celle-ci lui a appris à dissimuler presque constamment son immense mana afin de tromper les démons, une discipline que Frieren a perfectionnée pendant des siècles jusqu'à en faire une seconde nature. Malgré sa réputation de Tueuse de démons, elle conserve une curiosité presque enfantine pour les grimoires, y compris les sorts les plus ordinaires, et accepte volontiers des détours interminables pour enrichir sa collection. La mort de Himmel fissure cependant son rapport détaché au temps : comprenant que dix années représentaient une vie entière de souvenirs pour ses compagnons humains, elle entreprend un voyage vers Aureole pour apprendre à connaître les êtres dont l'existence lui paraissait autrefois trop brève. Sous son calme et ses habitudes paresseuses se révèle ainsi une femme attentive, qui exprime rarement ses sentiments mais honore les promesses et les gestes de ceux qu'elle a aimés.",
             cover: "frieren-frieren-cover",
             identityImage: "frieren-id_card",
-            detailImage: "frieren-character-1",
+            detailImage: "frieren-character",
             todayImage: "frieren-today",
             groups: [frierenParty, heroParty],
             skills: [
@@ -322,7 +322,7 @@ let works: [Work] = {
                 "Guerrier humain puissant qui accompagne Frieren et Fern.",
             description:
                 "Stark est le disciple d'Eisen, le guerrier nain du groupe des héros, qui l'a soumis à un entraînement si rigoureux que son corps peut encaisser des blessures auxquelles peu d'aventuriers survivraient. Chassé très jeune de son village détruit par les démons, il porte une peur profonde de l'échec et se décrit volontiers comme un lâche, alors même qu'il choisit presque toujours de rester lorsque les autres ont besoin de lui. Sa véritable bravoure ne réside donc pas dans l'absence de peur, mais dans sa capacité à avancer malgré elle. Armé de sa grande hache, Stark attire l'attention des monstres, brise leurs défenses et offre à Frieren et Fern l'espace nécessaire pour lancer leurs sorts. Sa gentillesse spontanée lui permet aussi de nouer des liens dans chaque ville traversée ; sous les disputes comiques avec Fern apparaît un jeune homme qui cherche peu à peu sa propre place dans l'héritage d'Eisen.",
-            cover: "stark-cover",
+            cover: "frieren-stark-cover",
             identityImage: "stark-id_card",
             detailImage: "stark-character",
             todayImage: "stark-today",
@@ -1422,4 +1422,4 @@ let works: [Work] = {
 
 var user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
 
-var userLogged: User = User(name: "Lloys", image: "frieren-frieren-cover", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
+var userLogged: User = User(name: "Lloys", image: "frieren-id_card", ageRating: 18, favoriteType: .anime, favoriteGenres: Genre.allCases, favoriteWorks: [works[0], works[1]], statCharacter: 24, statOrganization: 5, statLocation: 7, statChronology: 12)
