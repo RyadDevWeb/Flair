@@ -33,7 +33,7 @@ final class AppStore {
         }
         
         user.name = character.name
-        user.image = character.cover
+        user.image = character.identityImage
         user.ageRating = ageRating
         user.favoriteType = favoriteType
         user.favoriteGenres = onboarding.selectedGenres
