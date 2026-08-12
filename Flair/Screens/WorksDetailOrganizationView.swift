@@ -1,21 +1,52 @@
 //
 //  WorksDetailOrganizationView.swift
-//  flair
-//
-//  Created by Apprenant131 on 29/07/2026.
+//  Flair
 //
 
 import SwiftUI
 
 struct WorksDetailOrganizationView: View {
     
-    let workOrganization : WorkOrganization
+    let workOrganization: WorkOrganization
     
     var body: some View {
-        Text("Hello, World!")
+        
+        ScrollView {
+            
+            VStack(alignment: .leading, spacing: 20) {
+                
+                WorkDetailOrganizationBadge(
+                    workOrganization: workOrganization
+                )
+                
+                WorkDetailOrganizationRoleCard(
+                    workOrganization: workOrganization
+                )
+                
+                WorkDetailOrganizationSpecialityCard(
+                    workOrganization: workOrganization
+                )
+                
+                WorkDetailOrganizationStaffCard(
+                    workOrganization: workOrganization
+                )
+                
+                WorkDetailOrganizationDescription(
+                    workOrganization: workOrganization
+                )
+            }
+            .padding()
+        }
+        .background(Color.black)
+        .preferredColorScheme(.dark)
     }
 }
 
+
+
 #Preview {
-    WorksDetailOrganizationView(workOrganization: works[0].organizations[0])
+    
+    WorksDetailOrganizationView(
+        workOrganization: works[0].organizations[1]
+    )
 }

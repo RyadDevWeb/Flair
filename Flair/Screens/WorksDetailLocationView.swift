@@ -64,6 +64,6 @@ struct WorksDetailLocationView: View {
 }
 
 #Preview {
-    WorksDetailLocationView(workLocation: works[0].locations[0])
+    WorksDetailLocationView(workLocation: works[0].locations[2])
         .environment(user)
 }

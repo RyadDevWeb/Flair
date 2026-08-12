@@ -40,12 +40,15 @@ struct WorkDetailCharacterCard: View {
                 }
                 
                 ForEach(workCharacter.skills, id : \.self) {
-                    skill in
-                    Text(skill)
+                        skill in
+
+                        Text(skill)
+                        
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                 }
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            }
+        
             
             Spacer()
         }
