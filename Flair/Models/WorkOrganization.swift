@@ -14,5 +14,5 @@ struct WorkOrganization: Identifiable {
     let details: String
     let role: String
     let speciality: String
-    let staff: String
+    let staff: Int
 }

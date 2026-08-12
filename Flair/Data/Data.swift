@@ -7,8 +7,246 @@
 
 import Foundation
 
-
 let works: [Work] = {
+    
+    // MARK: - One Piece
+
+    // MARK: Organisations
+
+    let strawHatPirates = WorkOrganization(
+        team: "Équipage du Chapeau de Paille",
+        cover: "one_piece-pirate-cover",
+        imageTeam: "one_piece-pirate-detail",
+        details:
+            "L'Équipage du Chapeau de Paille est un groupe de pirates fondé et dirigé par Monkey D. Luffy. Chaque membre poursuit son propre rêve tout en accompagnant Luffy dans sa quête pour trouver le One Piece. Leur équipage repose avant tout sur la liberté, la confiance et la protection de leurs compagnons. Au cours de leur voyage, ils deviennent progressivement l'un des équipages les plus importants et les plus redoutés du monde.",
+        role: "Monkey D. Luffy",
+        speciality: "Exploration et piraterie",
+        staff: 10
+    )
+
+    let marines = WorkOrganization(
+        team: "Marine",
+        cover: "one_piece-marine-cover",
+        imageTeam: "one_piece-marine-detail",
+        details:
+            "La Marine est la principale force militaire du Gouvernement Mondial. Elle possède des bases réparties à travers les différentes mers et a pour mission officielle de protéger les populations et de combattre les pirates. Son immense hiérarchie rassemble soldats, officiers, vice-amiraux et amiraux. Les membres de la Marine défendent cependant différentes conceptions de la justice, allant d'une approche protectrice à une vision beaucoup plus radicale.",
+        role: "Sakazuki",
+        speciality: "Justice et sécurité maritime",
+        staff: 100000
+    )
+
+    let fiveElders = WorkOrganization(
+        team: "Cinq Doyens",
+        cover: "one_piece-5_doyen-cover",
+        imageTeam: "one_piece-5_doyen-detail",
+        details:
+            "Les Cinq Doyens comptent parmi les plus hautes autorités publiques du Gouvernement Mondial. Ils interviennent dans les décisions majeures concernant l'équilibre politique du monde, la Marine, les pirates et les secrets que le Gouvernement cherche à protéger. Leur influence s'étend sur une grande partie des institutions mondiales et leur véritable puissance ainsi que leurs objectifs occupent une place centrale dans les événements les plus récents de l'histoire.",
+        role: "Saint Jaygarcia Saturn",
+        speciality: "Autorité et gouvernement",
+        staff: 5
+    )
+
+    let onePieceOrganizations = [
+        strawHatPirates,
+        marines,
+        fiveElders
+    ]
+
+
+    // MARK: Personnages
+
+    let onePieceCharacters = [
+
+        WorkCharacter(
+            name: "Monkey D. Luffy",
+            summary:
+                "Capitaine de l'Équipage du Chapeau de Paille déterminé à devenir le Roi des Pirates.",
+            description:
+                "Monkey D. Luffy est un pirate originaire d'East Blue dont le rêve est de trouver le One Piece et de devenir le Roi des Pirates. Inspiré durant son enfance par Shanks le Roux, il prend la mer afin de former son propre équipage. Pour Luffy, devenir Roi des Pirates signifie avant tout devenir l'homme le plus libre du monde. Son caractère imprévisible cache une loyauté absolue envers ses compagnons et une détermination exceptionnelle lorsqu'une personne qu'il considère comme son amie est menacée.",
+            cover: "one_piece-luffy-cover",
+            identityImage: "luffy-id_card",
+            detailImage: "one_piece-luffy-detail",
+            todayImage: "luffy-today",
+            groups: [strawHatPirates],
+            skills: [
+                "Haki",
+                "Fruit du Démon",
+                "Combat rapproché"
+            ],
+            species: ["Humain"]
+        ),
+
+        WorkCharacter(
+            name: "Roronoa Zoro",
+            summary:
+                "Épéiste du Chapeau de Paille déterminé à devenir le meilleur sabreur du monde.",
+            description:
+                "Roronoa Zoro est l'un des principaux combattants de l'Équipage du Chapeau de Paille et le premier compagnon à rejoindre Luffy. Il pratique le Santoryu, un style de combat utilisant trois sabres simultanément. Son objectif est de devenir le meilleur sabreur du monde. Derrière son caractère sérieux et son terrible sens de l'orientation, Zoro possède une loyauté immense envers son capitaine et ses compagnons.",
+            cover: "one_piece-zoro-cover",
+            identityImage: "zoro-id_card",
+            detailImage: "one_piece-zoro-detail",
+            todayImage: "zoro-today",
+            groups: [strawHatPirates],
+            skills: [
+                "Santoryu",
+                "Haki",
+                "Maîtrise du sabre"
+            ],
+            species: ["Humain"]
+        ),
+
+        WorkCharacter(
+            name: "Shanks",
+            summary:
+                "Puissant pirate et Empereur ayant inspiré Luffy à prendre la mer.",
+            description:
+                "Shanks le Roux est le capitaine de l'Équipage du Roux et l'un des pirates les plus influents du monde. Sa rencontre avec Luffy durant l'enfance de celui-ci joue un rôle déterminant dans la naissance de son rêve. Shanks confie son célèbre chapeau de paille à Luffy en lui demandant de le lui rendre lorsqu'il sera devenu un grand pirate.",
+            cover: "one_piece-shanks-cover",
+            identityImage: "shanks-id_card",
+            detailImage: "one_piece-shanks-detail",
+            todayImage: "shanks-today",
+            groups: [],
+            skills: [
+                "Haki",
+                "Escrime",
+                "Commandement"
+            ],
+            species: ["Humain"]
+        ),
+
+        WorkCharacter(
+            name: "Gol D. Roger",
+            summary:
+                "Ancien Roi des Pirates dont l'héritage déclenche la grande ère de la piraterie.",
+            description:
+                "Gol D. Roger est le légendaire pirate ayant réussi à atteindre la dernière île de Grand Line avec son équipage. Après avoir obtenu tout ce que le monde pouvait offrir, il reçoit le titre de Roi des Pirates. Ses dernières paroles avant son exécution annoncent l'existence de son immense trésor, le One Piece, et provoquent le début de la grande ère de la piraterie.",
+            cover: "one_piece-gold_roger-cover",
+            identityImage: "gold_roger-id_card",
+            detailImage: "one_piece-gold_roger-detail",
+            todayImage: "gold_roger-today",
+            groups: [],
+            skills: [
+                "Haki",
+                "Escrime",
+                "Commandement"
+            ],
+            species: ["Humain"]
+        )
+    ]
+
+
+    // MARK: Lieux
+
+    let onePieceLocations = [
+
+        WorkLocation(
+            name: "Elbaf",
+            cover: "one_piece-elbaf-cover",
+            image: "one_piece-elbaf-detail",
+            summary:
+                "Royaume des géants situé dans le Nouveau Monde.",
+            details:
+                "Elbaf est une île légendaire principalement habitée par des géants et réputée pour la puissance de ses guerriers. Sa culture valorise fortement l'honneur et le combat. L'île est évoquée à plusieurs reprises durant le voyage des Chapeaux de Paille et occupe une place importante dans l'histoire du monde.",
+            location: "Nouveau Monde"
+        ),
+
+        WorkLocation(
+            name: "Onigashima",
+            cover: "one_piece-Onigashima-cover",
+            image: "one_piece-Onigashima-detail",
+            summary:
+                "Forteresse servant de base à l'Équipage aux Cent Bêtes de Kaido.",
+            details:
+                "Onigashima est une île située près du Pays des Wa et utilisée comme quartier général par Kaido et son équipage. Elle devient le théâtre d'une immense bataille lorsque l'alliance menée par les samouraïs et les pirates du Chapeau de Paille lance son attaque afin de renverser Kaido et Orochi.",
+            location: "Pays des Wa"
+        ),
+
+        WorkLocation(
+            name: "Pays des Wa",
+            cover: "one_piece-wano_kuni-cover",
+            image: "one_piece-wano_kuni-detail",
+            summary:
+                "Pays isolé connu pour ses samouraïs et longtemps dominé par Kaido et Orochi.",
+            details:
+                "Le Pays des Wa est une nation isolée du reste du monde et célèbre pour ses puissants samouraïs. Pendant de nombreuses années, Kaido et Kurozumi Orochi imposent leur domination sur le pays. L'arrivée de Luffy et de ses alliés permet aux héritiers de Kozuki Oden de lancer une rébellion destinée à libérer la population.",
+            location: "Nouveau Monde"
+        )
+    ]
+
+
+    // MARK: Événements
+
+    let onePieceEvents = [
+
+        WorkEvent(
+            title: "Gear 5",
+            cover: "one_piece-gear5-cover",
+            image: "one_piece-gear5-detail",
+            description:
+                "Pendant son affrontement contre Kaido, Luffy atteint une nouvelle transformation liée à l'éveil de son Fruit du Démon. Cette forme, appelée Gear 5, lui offre une liberté de mouvement exceptionnelle et transforme profondément sa manière de combattre. Son apparition représente un tournant majeur dans la bataille d'Onigashima.",
+            period: "Arc du Pays des Wa",
+            year: 3
+        ),
+
+        WorkEvent(
+            title: "Mort de Luffy et réveil",
+            cover: "one_piece-luffy_pleure-cover",
+            image: "one_piece-luffy_pleure-detail",
+            description:
+                "Au cours de la bataille contre Kaido, Luffy subit une défaite extrêmement violente qui semble mettre fin à son combat. Pourtant, cet instant déclenche un phénomène inattendu lié à son Fruit du Démon et conduit directement à l'apparition de sa nouvelle transformation.",
+            period: "Bataille d'Onigashima",
+            year: 3
+        ),
+
+        WorkEvent(
+            title: "Guerre de Marineford",
+            cover: "one_piece-marineford-cover",
+            image: "one_piece-marineford-detail",
+            description:
+                "La Marine organise l'exécution publique de Portgas D. Ace à Marineford. Barbe Blanche mobilise alors ses forces afin de sauver son commandant. Luffy rejoint le champ de bataille et tente désespérément de libérer son frère. Cette guerre rassemble certaines des plus grandes puissances du monde et bouleverse profondément l'équilibre de l'ère de la piraterie.",
+            period: "Guerre au Sommet",
+            year: 1
+        )
+    ]
+
+
+    // MARK: One Piece
+
+    let onePiece = Work(
+        type: .anime,
+        title: "One Piece",
+        image: "one_piece-cover",
+        genres: [
+            .action,
+            .adventure,
+            .fantasy,
+            .drama
+        ],
+        ageRating: 12,
+        nbSeasons: 21,
+        nbEpisodes: 0,
+        airedDate: makeGregorianDate(
+            year: 1999,
+            month: 10,
+            day: 20
+        ),
+        summary:
+            "Monkey D. Luffy prend la mer afin de trouver le légendaire One Piece et devenir le Roi des Pirates. Accompagné de son équipage, il traverse les mers à la recherche d'aventures, de liberté et du mystérieux trésor laissé par Gol D. Roger.",
+        locations: onePieceLocations,
+        characters: onePieceCharacters,
+        datesChronology: onePieceEvents,
+        organizations: onePieceOrganizations,
+        streamingPlatforms: [
+            "logo_crunchyroll",
+            "logo_netflix"
+        ],
+        duration: 24,
+        url: nil
+    )
+    
+    
+    
+    
         // MARK: - Frieren
     
     let frierenParty = WorkOrganization(
@@ -17,9 +255,9 @@ let works: [Work] = {
         imageTeam: "frieren-frieren_party-detail",
         details:
             "Bien plus qu'une simple équipe d'aventuriers, le groupe de Frieren est une famille improvisée dont les membres apprennent à accorder leurs rythmes et leurs silences. Frieren en porte la mémoire et l'expérience millénaire, Fern en assure souvent la discipline quotidienne, tandis que Stark devient le rempart physique derrière lequel les deux magiciennes peuvent déployer leurs sorts. Leur marche vers Aureole les conduit à travers des villages oubliés, des cols infestés de monstres et des terres où subsistent les traces du groupe de Himmel. Chaque détour, même motivé par un grimoire apparemment dérisoire, transforme le voyage en une lente exploration du deuil, de la transmission et de la valeur des instants partagés.",
-        role: "Groupe principal d'exploration",
-        speciality: "Magie, combat rapproché et exploration",
-        staff: "Frieren, Fern et Stark"
+        role: "Frieren",
+        speciality: "Magie et exploration",
+        staff: 3
     )
     
     let heroParty = WorkOrganization(
@@ -28,9 +266,9 @@ let works: [Work] = {
         imageTeam: "frieren-hero_party-detail",
         details:
             "Réunis autour de Himmel, Frieren, Heiter et Eisen ont traversé le continent pendant dix années avant d'atteindre le château du Roi des Démons et de mettre fin à son règne. Leur force ne venait pas seulement de leurs talents complémentaires, mais de leur capacité à transformer les épreuves en souvenirs : Himmel donnait une direction morale au groupe, Eisen absorbait les coups impossibles, Heiter maintenait ses compagnons en vie et Frieren déchiffrait les magies les plus anciennes. Des décennies plus tard, statues, récits populaires et petites promesses tenues témoignent encore de leur passage. Pour Frieren, retracer leur route revient à découvrir tardivement tout ce que ses compagnons avaient semé dans le monde et tout ce qu'elle n'avait pas compris d'eux.",
-        role: "Héros historiques",
-        speciality: "Quêtes héroïques et lutte contre les démons",
-        staff: "Himmel, Frieren, Heiter et Eisen"
+        role: "Himmel",
+        speciality: "Quêtes héroïques",
+        staff: 4
     )
     
     let sevenSages = WorkOrganization(
@@ -39,9 +277,9 @@ let works: [Work] = {
         imageTeam: "frieren-seven_sages_of_the_destruction-detail",
         details:
             "Les Sept Sages de la Destruction comptaient parmi les serviteurs les plus redoutables du Roi des Démons, chacun possédant une magie singulière capable de contourner les règles ordinaires du combat. Leurs pouvoirs ne sont pas de simples armes : ils incarnent une logique démoniaque froide, raffinée durant des siècles et souvent incompréhensible pour les humains. Même après la chute de leur souverain, l'influence des Sages demeure dans les territoires ravagés, les malédictions persistantes et la peur transmise de génération en génération. Aura la Guillotine, avec sa balance de l'obéissance et son armée de morts, illustre parfaitement cette menace fondée autant sur la puissance que sur une incapacité fondamentale à comprendre les émotions humaines.",
-        role: "Faction antagoniste",
-        speciality: "Magies démoniaques spécialisées",
-        staff: "Aura la Guillotine et les autres Sages de la Destruction"
+        role: "Roi des Démons",
+        speciality: "Magies démoniaques",
+        staff: 7
     )
     
     let frierenOrganizations = [frierenParty, heroParty, sevenSages]
@@ -205,9 +443,9 @@ let works: [Work] = {
         imageTeam: "jjk-exorcistes-detail",
         details:
             "Les exorcistes forment une société secrète chargée de contenir les fléaux que les émotions négatives humaines font naître dans les écoles, les hôpitaux et les lieux marqués par la peur. Leur quotidien alterne cours théoriques, entraînement au combat et missions dont la dangerosité est évaluée selon un système de grades parfois terriblement imprécis. Certains héritent d'une technique transmise par un grand clan, tandis que d'autres développent une manière entièrement personnelle de façonner l'énergie occulte. Derrière leur mission protectrice se cache une institution conservatrice, gouvernée par des autorités prêtes à sacrifier des individus comme Yuji pour préserver l'ordre établi. Les élèves de Tokyo incarnent une génération qui refuse peu à peu cette fatalité et cherche à redéfinir ce que signifie sauver quelqu'un.",
-        role: "Protection du monde humain",
-        speciality: "Exorcisme et maîtrise de l'énergie occulte",
-        staff: "Élèves, professeurs et exorcistes professionnels"
+        role: "Satoru Gojo",
+        speciality: "Exorcisme",
+        staff: 50
     )
     
     let curses = WorkOrganization(
@@ -216,9 +454,9 @@ let works: [Work] = {
         imageTeam: "jjk-fleaux-detail",
         details:
             "Les fléaux sont la matérialisation de la peur, de la haine, du regret et des autres émotions que les humains laissent s'accumuler sous forme d'énergie occulte. Les plus faibles agissent comme des prédateurs instinctifs, invisibles à la majorité de la population, mais les fléaux de haut niveau possèdent une intelligence, une technique innée et parfois une extension du territoire capable d'imposer leurs propres règles à l'espace. Mahito, Jogo, Hanami et Dagon ne se perçoivent pas comme de simples monstres : ils rêvent d'un monde où les malédictions remplaceraient l'humanité. Leur alliance donne à ces créatures une stratégie commune, mais leurs tempéraments restent profondément liés aux peurs dont elles sont issues. Les combattre oblige donc les exorcistes à affronter, sous une forme tangible, les violences et contradictions produites par la société humaine.",
-        role: "Menace surnaturelle",
-        speciality: "Techniques maudites et domaines",
-        staff: "Mahito, Jogo, Hanami, Dagon et leurs alliés"
+        role: "Mahito",
+        speciality: "Techniques maudites",
+        staff: 4
     )
     
     let curseMasters = WorkOrganization(
@@ -227,9 +465,9 @@ let works: [Work] = {
         imageTeam: "jjk-maitres_fleaux-detail",
         details:
             "Les maîtres des fléaux sont des humains capables de manier l'énergie occulte qui ont rompu avec les règles de l'école et emploient leurs dons pour tuer, manipuler ou poursuivre un projet idéologique. Contrairement aux fléaux, ils comprennent parfaitement les institutions humaines et savent exploiter leurs rivalités, leurs angles morts et leur bureaucratie. Certains collectionnent ou contrôlent des malédictions, d'autres vendent leurs services, posent des rideaux ou infiltrent les barrières protégeant les écoles. Leur coopération avec Mahito et ses alliés rend la menace particulièrement dangereuse, car elle associe la puissance surnaturelle des fléaux à une planification patiente. Ils révèlent aussi la fragilité du monde de l'exorcisme : former quelqu'un au combat ne garantit jamais qu'il acceptera l'ordre qu'on lui demande de défendre.",
-        role: "Faction antagoniste humaine",
-        speciality: "Manipulation des fléaux et stratégies occultes",
-        staff: "Utilisateurs de fléaux renégats"
+        role: "Suguru Geto",
+        speciality: "Manipulation des fléaux",
+        staff: 20
     )
     
     let jujutsuOrganizations = [jujutsuSorcerers, curses, curseMasters]
@@ -395,9 +633,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Les Quatre Héros cardinaux sont invoqués depuis le Japon contemporain pour manier des armes légendaires indissociables de leur corps : l'Épée, la Lance, l'Arc et le Bouclier. Chacun découvre le monde à travers des références proches d'un jeu vidéo, mais leurs expériences et leurs certitudes divergent rapidement, empêchant la coopération dont les Vagues exigeraient pourtant l'urgence. Leurs armes absorbent des matériaux, déverrouillent de nouvelles formes et imposent à leur porteur une progression particulière. Alors que Ren, Motoyasu et Itsuki bénéficient immédiatement de la reconnaissance du royaume, Naofumi est isolé par les préjugés religieux entourant le Bouclier. L'organisation représente donc autant l'espoir officiel de Melromarc que l'échec d'individus incapables, au départ, de dépasser leur rivalité.",
-        role: "Défenseurs invoqués",
-        speciality: "Armes cardinales et progression héroïque",
-        staff: "Naofumi, Ren, Motoyasu et Itsuki"
+        role: "Aucun",
+        speciality: "Armes cardinales",
+        staff: 4
     )
     
     let shieldParty = WorkOrganization(
@@ -406,9 +644,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Le groupe du Héros au Bouclier se construit en marge de la cour, loin des soutiens et des privilèges accordés aux autres héros. Naofumi rassemble d'abord Raphtalia, survivante d'une Vague qu'il aide à retrouver sa force, puis Filo, filoliale élevée depuis l'œuf, avant d'accueillir Rishia et d'autres compagnons rejetés ou sous-estimés. Leur efficacité repose sur une complémentarité patiemment développée : le Bouclier protège et soutient, Raphtalia frappe avec précision, Filo exploite sa vitesse, et Rishia adapte sa magie aux failles de l'adversaire. Les liens du groupe naissent dans la défiance, mais se transforment en loyauté choisie. Chaque victoire reconstruit à la fois la réputation de Naofumi et sa capacité à croire de nouveau en quelqu'un.",
-        role: "Groupe principal",
-        speciality: "Défense, soutien, magie et combat coordonné",
-        staff: "Naofumi, Raphtalia, Filo et Rishia"
+        role: "Naofumi Iwatani",
+        speciality: "Défense et soutien",
+        staff: 4
     )
     
     let threeHeroesChurch = WorkOrganization(
@@ -417,9 +655,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "L'Église des Trois Héros domine une partie de la vie religieuse et politique de Melromarc en glorifiant l'Épée, la Lance et l'Arc, tandis que le Héros au Bouclier est présenté comme une figure démoniaque. Cette doctrine s'enracine dans les tensions historiques avec les nations demi-humaines qui vénèrent au contraire le Bouclier. Derrière ses cérémonies et son autorité morale, l'Église diffuse de la propagande, influence la cour et exploite l'accusation portée contre Naofumi pour l'écarter. Lorsque les héros ne correspondent plus à l'image qu'elle veut imposer, elle se retourne même contre ceux qu'elle prétend adorer. Sa radicalisation montre comment une institution peut transformer une légende protectrice en outil de pouvoir et mettre tout un royaume en danger au nom de sa propre pureté.",
-        role: "Faction religieuse antagoniste",
-        speciality: "Influence politique et magie cérémonielle",
-        staff: "Grand Prêtre Biscas T. Balmus et ses fidèles"
+        role: "Biscas T. Balmus",
+        speciality: "Magie cérémonielle",
+        staff: 200
     )
     
     let shieldOrganizations = [
@@ -581,9 +819,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "L'École du Loup a formé à Kaer Morhen des générations de sorceleurs grâce à un entraînement brutal, à l'étude des monstres et aux mutations de l'Épreuve des Herbes. Ses membres apprennent à lire une piste, préparer des huiles et potions, manier les signes et combattre avec deux épées selon la nature de leur cible. Les massacres et la disparition progressive du savoir nécessaire aux mutations ont réduit l'ordre à une poignée de survivants dispersés sur le Continent. Geralt, Vesemir, Eskel et Lambert partagent moins une hiérarchie qu'une fraternité forgée par les mêmes souffrances. Lorsque Ciri arrive à Kaer Morhen, l'École doit choisir si son héritage consiste seulement à fabriquer des tueurs de monstres ou à transmettre une discipline capable de protéger sans détruire.",
-        role: "Ordre de chasseurs de monstres",
-        speciality: "Alchimie, signes et escrime",
-        staff: "Geralt, Vesemir, Eskel et Lambert"
+        role: "Vesemir",
+        speciality: "Chasse aux monstres",
+        staff: 4
     )
     
     let brotherhoodOfSorcerers = WorkOrganization(
@@ -592,9 +830,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "La Confrérie des magiciens rassemble les praticiens du chaos et place nombre d'entre eux comme conseillers auprès des souverains du Continent. Aretuza façonne leur apparence, leur maîtrise et leur loyauté, puis le Chapitre tente de préserver un équilibre entre royaumes qui repose en réalité sur d'innombrables secrets. Les mages se présentent comme une communauté au-dessus des frontières, mais leurs attachements politiques, leurs ambitions et la montée de Nilfgaard divisent peu à peu l'institution. Tissaia défend encore l'idéal d'une fraternité responsable, tandis que Vilgefortz et d'autres manipulent le conclave pour leurs propres objectifs. Le coup d'État de Thanedd révèle que la neutralité de la Confrérie n'était plus qu'une façade et disperse ses membres au moment où le Continent aurait le plus besoin d'une autorité commune.",
-        role: "Autorité magique",
-        speciality: "Magie, diplomatie et conseil politique",
-        staff: "Yennefer, Tissaia, Vilgefortz et les mages du Continent"
+        role: "Tissaia de Vries",
+        speciality: "Magie et diplomatie",
+        staff: 100
     )
     
     let nilfgaard = WorkOrganization(
@@ -603,9 +841,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Nilfgaard est une puissance impériale du Sud dont les armées disciplinées avancent vers les Royaumes du Nord sous des étendards noirs et or. Son expansion mêle conquête militaire, vassalisation politique, espionnage et usage stratégique de la magie. La destruction de Cintra n'est pas seulement une victoire territoriale : l'empire recherche Ciri, héritière du Sang Ancien, dont le pouvoir pourrait modifier l'équilibre du monde. Des figures comme Cahir et Fringilla servent cette ambition tout en découvrant que la foi, la peur et les intérêts personnels compliquent l'obéissance à l'Empereur. Dans la série, Nilfgaard agit comme une force qui resserre progressivement les trois trajectoires de Geralt, Yennefer et Ciri jusqu'à rendre leur fuite commune impossible à éviter.",
-        role: "Puissance impériale",
-        speciality: "Conquête militaire, renseignement et magie",
-        staff: "Empereur Emhyr, Cahir, Fringilla et l'armée nilfgaardienne"
+        role: "Emhyr var Emreis",
+        speciality: "Conquête militaire",
+        staff: 100000
     )
     
     let witcherOrganizations = [
@@ -751,6 +989,241 @@ let works: [Work] = {
         url: URL(string: "https://www.youtube.com/watch?v=bGFpSNKtLlc")
     )
     
+    
+    // MARK: - L'Attaque des Titans
+
+    let surveyCorps = WorkOrganization(
+        team: "Bataillon d'Exploration",
+        cover: "aot-survey_corps-cover",
+        imageTeam: "aot-survey_corps-detail",
+        details:
+            "Le Bataillon d'Exploration est la branche de l'armée chargée de mener des expéditions au-delà des Murs afin d'étudier les Titans, récupérer les territoires perdus et découvrir la vérité sur le monde extérieur. Ses soldats affrontent un taux de mortalité extrêmement élevé, mais leur détermination permet progressivement à l'humanité de comprendre l'origine de ses ennemis et les secrets dissimulés par les autorités. Sous le commandement d'Erwin Smith puis de Hansi Zoe, le Bataillon devient le symbole de la quête de liberté et de vérité.",
+        role: "Erwin Smith",
+        speciality: "Expéditions et combat contre les Titans",
+        staff: 300
+    )
+
+    let garrison = WorkOrganization(
+        team: "Garnison",
+        cover: "aot-garrison-cover",
+        imageTeam: "aot-garrison-detail",
+        details:
+            "La Garnison constitue la principale force chargée de protéger les villes et les Murs contre les attaques de Titans. Ses soldats entretiennent les défenses, manient les canons installés sur les remparts et interviennent lors des évacuations. Moins exposée que le Bataillon d'Exploration en temps normal, elle devient essentielle lorsque les Titans franchissent les Murs et menacent directement les populations civiles.",
+        role: "Dot Pixis",
+        speciality: "Défense des Murs",
+        staff: 30000
+    )
+
+    let militaryPolice = WorkOrganization(
+        team: "Brigades Spéciales",
+        cover: "aot-military_police-cover",
+        imageTeam: "aot-military_police-detail",
+        details:
+            "Les Brigades Spéciales constituent l'unité militaire la plus prestigieuse à l'intérieur des Murs. Seuls les meilleurs diplômés peuvent théoriquement rejoindre leurs rangs. Leur mission principale consiste à maintenir l'ordre dans les zones centrales et à protéger les autorités. Leur proximité avec le pouvoir les place cependant au cœur de nombreux secrets politiques et conflits internes.",
+        role: "Nile Dok",
+        speciality: "Sécurité intérieure",
+        staff: 5000
+    )
+
+    let titanOrganizations = [
+        surveyCorps,
+        garrison,
+        militaryPolice
+    ]
+
+
+    let titanCharacters = [
+
+        WorkCharacter(
+            name: "Eren Jäger",
+            summary:
+                "Jeune soldat déterminé à éliminer les Titans et à découvrir le monde au-delà des Murs.",
+            description:
+                "Eren Jäger grandit dans le district de Shiganshina avec Mikasa Ackerman et Armin Arlert. Depuis son enfance, il rêve de découvrir le monde extérieur décrit dans les livres d'Armin et refuse d'accepter une vie enfermée derrière les Murs. La destruction de Shiganshina et la mort de sa mère renforcent sa haine des Titans et le poussent à rejoindre l'armée. Après avoir découvert sa capacité à se transformer en Titan, Eren devient à la fois l'une des principales armes de l'humanité et le centre de nombreux conflits. Sa quête de liberté évolue progressivement jusqu'à remettre en question ses convictions, ses alliances et le prix qu'il est prêt à payer pour atteindre son objectif.",
+            cover: "aot-eren-cover",
+            identityImage: "aot-eren-id_card",
+            detailImage: "aot-eren-detail",
+            todayImage: "aot-eren-today",
+            groups: [surveyCorps],
+            skills: [
+                "Transformation en Titan",
+                "Équipement tridimensionnel",
+                "Combat rapproché"
+            ],
+            species: [
+                "Humain",
+                "Titan Primordial"
+            ]
+        ),
+
+        WorkCharacter(
+            name: "Mikasa Ackerman",
+            summary:
+                "Combattante exceptionnelle et amie d'enfance d'Eren.",
+            description:
+                "Mikasa Ackerman est recueillie par la famille Jäger après la mort de ses parents. Elle développe un lien extrêmement fort avec Eren et décide de le suivre lorsqu'il rejoint l'armée. Grâce aux capacités particulières de la famille Ackerman, Mikasa possède une force, des réflexes et une maîtrise du combat largement supérieurs à ceux d'un soldat ordinaire. Elle devient rapidement l'un des membres les plus redoutables du Bataillon d'Exploration.",
+            cover: "aot-mikasa-cover",
+            identityImage: "aot-mikasa-id_card",
+            detailImage: "aot-mikasa-detail",
+            todayImage: "aot-mikasa-today",
+            groups: [surveyCorps],
+            skills: [
+                "Équipement tridimensionnel",
+                "Combat rapproché",
+                "Force Ackerman"
+            ],
+            species: ["Humaine"]
+        ),
+
+        WorkCharacter(
+            name: "Armin Arlert",
+            summary:
+                "Stratège brillant dont l'intelligence devient essentielle au Bataillon d'Exploration.",
+            description:
+                "Armin Arlert est l'ami d'enfance d'Eren et Mikasa. Physiquement moins puissant que ses camarades, il se distingue par son intelligence, sa capacité d'analyse et son imagination stratégique. Son rêve de voir l'océan et les territoires décrits dans un livre interdit nourrit en grande partie le désir de liberté d'Eren. Au fil des batailles, Armin devient un stratège essentiel et apprend à prendre des décisions difficiles lorsque la survie de ses compagnons est en jeu.",
+            cover: "aot-armin-cover",
+            identityImage: "aot-armin-id_card",
+            detailImage: "aot-armin-detail",
+            todayImage: "aot-armin-today",
+            groups: [surveyCorps],
+            skills: [
+                "Stratégie",
+                "Analyse",
+                "Équipement tridimensionnel"
+            ],
+            species: [
+                "Humain",
+                "Titan Primordial"
+            ]
+        ),
+
+        WorkCharacter(
+            name: "Levi Ackerman",
+            summary:
+                "Caporal du Bataillon d'Exploration considéré comme le soldat le plus puissant de l'humanité.",
+            description:
+                "Levi Ackerman est le capitaine de l'escouade des opérations spéciales du Bataillon d'Exploration. Son enfance dans les bas-fonds l'a rendu extrêmement pragmatique et indépendant. Derrière son attitude froide et son obsession pour la propreté se cache un soldat profondément attaché à ses camarades. Sa maîtrise exceptionnelle de l'équipement tridimensionnel et les capacités héritées de la famille Ackerman font de lui l'un des combattants les plus dangereux face aux Titans.",
+            cover: "aot-levi-cover",
+            identityImage: "aot-levi-id_card",
+            detailImage: "aot-levi-detail",
+            todayImage: "aot-levi-today",
+            groups: [surveyCorps],
+            skills: [
+                "Équipement tridimensionnel",
+                "Combat anti-Titan",
+                "Force Ackerman"
+            ],
+            species: ["Humain"]
+        )
+    ]
+
+
+    let titanLocations = [
+
+        WorkLocation(
+            name: "District de Shiganshina",
+            cover: "aot-shiganshina-cover",
+            image: "aot-shiganshina-detail",
+            summary:
+                "Ville natale d'Eren, Mikasa et Armin située au sud du Mur Maria.",
+            details:
+                "Shiganshina est un district situé à l'extrémité sud du Mur Maria. Sa position avancée en fait l'un des premiers points exposés à une invasion. La destruction de sa porte par le Titan Colossal puis l'arrivée du Titan Cuirassé provoquent la chute du Mur Maria et bouleversent définitivement la vie d'Eren, Mikasa et Armin. Des années plus tard, le district devient également le lieu d'une bataille décisive pour récupérer les territoires perdus et atteindre la cave de la famille Jäger.",
+            location: "Mur Maria"
+        ),
+
+        WorkLocation(
+            name: "District de Trost",
+            cover: "aot-trost-cover",
+            image: "aot-trost-detail",
+            summary:
+                "District militaire situé au sud du Mur Rose.",
+            details:
+                "Trost devient le théâtre de l'une des premières grandes batailles auxquelles participent Eren et ses camarades après leur formation militaire. Lorsque le Titan Colossal détruit la porte extérieure, les recrues sont envoyées au combat avant même d'avoir rejoint définitivement leur corps d'armée. La capacité d'Eren à se transformer en Titan permet finalement d'élaborer un plan pour refermer la brèche.",
+            location: "Mur Rose"
+        ),
+
+        WorkLocation(
+            name: "Paradis",
+            cover: "aot-paradis-cover",
+            image: "aot-paradis-detail",
+            summary:
+                "Île où vivent les habitants des trois Murs.",
+            details:
+                "L'île de Paradis abrite les populations vivant derrière les Murs Maria, Rose et Sina. Pendant des générations, ses habitants pensent être les derniers humains encore en vie. La découverte de la vérité sur le monde extérieur transforme cependant leur perception de l'histoire et révèle que l'île est au centre d'un conflit beaucoup plus vaste impliquant Eldiens, Mahr et Titans.",
+            location: "Île de Paradis"
+        )
+    ]
+
+
+    let titanEvents = [
+
+        WorkEvent(
+            title: "Chute de Shiganshina",
+            cover: "aot-fall_shiganshina-cover",
+            image: "aot-fall_shiganshina-detail",
+            description:
+                "L'apparition soudaine du Titan Colossal devant la porte de Shiganshina met fin à un siècle de paix derrière les Murs. Après la destruction de la porte extérieure, le Titan Cuirassé ouvre une seconde brèche et permet aux Titans d'envahir le territoire humain. Eren assiste à la mort de sa mère et jure d'exterminer tous les Titans. Cet événement entraîne l'abandon du Mur Maria et devient le point de départ de toute l'histoire.",
+            period: "Chute du Mur Maria",
+            year: 845
+        ),
+
+        WorkEvent(
+            title: "Bataille de Trost",
+            cover: "aot-battle_trost-cover",
+            image: "aot-battle_trost-detail",
+            description:
+                "Cinq ans après la chute de Shiganshina, le Titan Colossal apparaît devant Trost et détruit une nouvelle fois la porte extérieure. Les jeunes recrues sont immédiatement envoyées au combat. Eren découvre alors qu'il peut se transformer en Titan. Malgré la méfiance de l'armée, Armin propose d'utiliser cette capacité pour transporter un énorme rocher et refermer la brèche.",
+            period: "Défense du Mur Rose",
+            year: 850
+        ),
+
+        WorkEvent(
+            title: "Retour à Shiganshina",
+            cover: "aot-return_shiganshina-cover",
+            image: "aot-return_shiganshina-detail",
+            description:
+                "Le Bataillon d'Exploration retourne à Shiganshina afin de reprendre le Mur Maria et d'atteindre la cave de Grisha Jäger. Les soldats affrontent simultanément le Titan Bestial, le Titan Cuirassé et le Titan Colossal. La bataille coûte la vie à une grande partie du Bataillon, mais permet finalement aux survivants de découvrir la vérité sur les Titans et l'existence du monde extérieur.",
+            period: "Reconquête du Mur Maria",
+            year: 850
+        )
+    ]
+
+
+    let attackOnTitan = Work(
+        type: .anime,
+        title: "L'Attaque des Titans",
+        image: "attack_on_titan-cover",
+        genres: [
+            .action,
+            .darkFantasy,
+            .drama
+        ],
+        ageRating: 16,
+        nbSeasons: 4,
+        nbEpisodes: 94,
+        airedDate: makeGregorianDate(
+            year: 2013,
+            month: 4,
+            day: 7
+        ),
+        summary:
+            "Après la destruction de sa ville par les Titans, Eren Jäger rejoint l'armée avec Mikasa et Armin afin de combattre ces créatures et découvrir la vérité sur leur monde.",
+        locations: titanLocations,
+        characters: titanCharacters,
+        datesChronology: titanEvents,
+        organizations: titanOrganizations,
+        streamingPlatforms: [
+            "logo_crunchyroll",
+            "logo_netflix",
+            "logo_prime_video"
+        ],
+        duration: 24,
+        url: URL(
+            string: "https://www.youtube.com/watch?v=MGRm4IzK1SQ"
+        )
+    )
+    
+    
         // MARK: - Star Wars: Starfighter
         // Les personnages, lieux, organisations et événements ci-dessous sont fictifs.
         // Ils servent de données de démonstration en attendant les informations officielles.
@@ -761,9 +1234,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Dans ces données fictives de démonstration, l'Escadron Horizon rassemble d'anciens pilotes militaires, des mécaniciens itinérants et des volontaires issus de systèmes que les grandes puissances ne protègent plus. Depuis la chute du Premier Ordre, les routes hyperspatiales secondaires sont devenues le territoire de pirates et de trafiquants capables d'isoler une planète entière en détruisant une balise. Horizon escorte les convois, répond aux signaux de détresse et refuse de prêter allégeance à un gouvernement unique. Ses appareils portent les réparations de dizaines de ports et ses membres prennent leurs décisions autour d'une table plutôt que dans une chaîne de commandement rigide. L'arrivée du prototype Asterion transforme cette modeste force de protection en enjeu galactique et met à l'épreuve son idéal d'indépendance.",
-        role: "Pilotes protecteurs",
-        speciality: "Interception, reconnaissance et combat spatial",
-        staff: "Kael Varyn, Nira Vale et les pilotes de l'escadron"
+        role: "Kael Varyn",
+        speciality: "Combat spatial",
+        staff: 24
     )
     
     let pathfinderCorps = WorkOrganization(
@@ -772,9 +1245,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Le Corps des Éclaireurs fictif explore les régions où les cartes impériales sont devenues inexactes après des décennies de guerre et de phénomènes hyperspatiaux. Ses équipes déposent des balises, analysent les anomalies gravitationnelles et ouvrent des corridors capables de reconnecter des mondes coupés du reste de la galaxie. Chaque mission associe pilotes, astronomes, droïdes cartographes et spécialistes du premier contact, car découvrir une route signifie aussi bouleverser les sociétés qui vivaient derrière elle. Soren Kade dirige le Corps avec une prudence née d'une expédition ancienne dont plusieurs membres ne sont jamais revenus. Les coordonnées confiées à Nira suggèrent que cette disparition et le projet Asterion pourraient provenir du même secret.",
-        role: "Exploration et sécurité des routes",
-        speciality: "Cartographie hyperspatiale et renseignement",
-        staff: "Soren Kade et les équipes d'éclaireurs"
+        role: "Soren Kade",
+        speciality: "Cartographie hyperspatiale",
+        staff: 80
     )
     
     let obsidianSyndicate = WorkOrganization(
@@ -783,9 +1256,9 @@ let works: [Work] = {
         imageTeam: "",
         details:
             "Le Syndicat d'Obsidienne fictif prospère dans les espaces laissés vacants par la disparition du Premier Ordre, achetant des chantiers, soudoyant des gouverneurs et contrôlant les passages dont dépendent les colonies isolées. Son pouvoir ne repose pas sur une flotte immense, mais sur l'information : manifeste falsifié, balise sabotée ou dette soigneusement rachetée suffisent à mettre une planète à genoux. Vexa Rhun commande ses opérations avec la conviction que la paix n'est qu'un marché encore mal organisé. En s'emparant de l'Asterion, le Syndicat pourrait ouvrir des routes impossibles à surveiller et imposer un monopole sur les échanges entre les systèmes libres. Ses agents suivent donc Nira et l'Escadron Horizon non pour conquérir un territoire, mais pour contrôler la géographie même de la galaxie.",
-        role: "Faction antagoniste fictive",
-        speciality: "Contrebande, sabotage et technologie interdite",
-        staff: "Vexa Rhun et ses agents"
+        role: "Vexa Rhun",
+        speciality: "Contrebande et sabotage",
+        staff: 150
     )
     
     let starfighterOrganizations = [
@@ -936,8 +1409,16 @@ let works: [Work] = {
         url: nil
     )
     
-    return [frieren, jujutsuKaisen, shieldHero, theWitcher, starfighter]
-    }()
+    return [
+        onePiece,
+        frieren,
+        jujutsuKaisen,
+        shieldHero,
+        theWitcher,
+        attackOnTitan,
+        starfighter
+    ]
+}()
 
 var user: User = User(name: "", image: "", ageRating: 0, favoriteType: .movie, favoriteGenres: [.action], favoriteWorks: [works[0]], statCharacter: 0, statOrganization: 0, statLocation: 0, statChronology: 0)
 
