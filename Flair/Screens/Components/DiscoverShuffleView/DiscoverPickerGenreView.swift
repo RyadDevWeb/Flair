@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExplorationPickerGenre: View {
+struct DiscoverPickerGenreView: View {
     
     @Binding var selectedGenre: Genre
 
@@ -25,5 +25,5 @@ struct ExplorationPickerGenre: View {
 }
 
 #Preview {
-    ExplorationPickerGenre(selectedGenre: .constant(.action))
+    DiscoverPickerGenreView(selectedGenre: .constant(.action))
 }
