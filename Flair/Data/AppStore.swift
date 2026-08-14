@@ -1,10 +1,4 @@
-//
-//  AppStore.swift
-//  Flair
-//
-//  Created by Apprenant154 on 09/08/2026.
-//
-
+import Foundation
 import Observation
 
 @Observable
@@ -38,5 +32,20 @@ final class AppStore {
         user.favoriteType = favoriteType
         user.favoriteGenres = onboarding.selectedGenres
         user.favoriteWorks = onboarding.selectedWorks
+        
+        saveUser()
+    }
+    
+    private func saveUser() {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(user.name, forKey: "userName")
+        defaults.set(user.image, forKey: "userImage")
+        defaults.set(user.ageRating, forKey: "userAgeRating")
+        
+        defaults.set(
+            user.favoriteWorks.map(\.title),
+            forKey: "userFavoriteWorks"
+        )
     }
 }

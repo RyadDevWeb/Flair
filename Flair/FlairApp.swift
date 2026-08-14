@@ -9,16 +9,25 @@ import SwiftUI
 
 @main
 struct FlairApp: App {
+    
     @State private var appStore: AppStore
     
     init() {
+        let defaults = UserDefaults.standard
+        
+        let favoriteTitles =
+        defaults.stringArray(forKey: "userFavoriteWorks")
+        ?? [works[0].title]
+        
         let user = User(
-            name: "",
-            image: "",
-            ageRating: 0,
+            name: defaults.string(forKey: "userName") ?? "",
+            image: defaults.string(forKey: "userImage") ?? "",
+            ageRating: defaults.integer(forKey: "userAgeRating"),
             favoriteType: .movie,
             favoriteGenres: [.action],
-            favoriteWorks: [works[0]],
+            favoriteWorks: works.filter {
+                favoriteTitles.contains($0.title)
+            },
             statCharacter: 12,
             statOrganization: 6,
             statLocation: 4,
@@ -34,7 +43,6 @@ struct FlairApp: App {
     }
     
     var body: some Scene {
-        
         WindowGroup {
             RootView()
                 .environment(appStore)
