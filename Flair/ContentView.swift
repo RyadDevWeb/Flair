@@ -8,35 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
+    @State private var selectedTab = 0
+
     var body: some View {
-        TabView {
-            Tab("Explorer", systemImage: "safari") {
-                NavigationStack {
-                    ExplorationView()
-                }
+
+        TabView(selection: $selectedTab) {
+
+            NavigationStack {
+                ExplorationView()
             }
-            Tab("Découvrir", systemImage: "sparkles") {
-                NavigationStack {
-                    DiscoverQuizzView()
-                }
+            .tabItem {
+                Label("Explorer", systemImage: "safari")
+            }.tag(0)
+
+            NavigationStack {
+                DiscoverShuffleView()
             }
-            Tab("Calendrier", systemImage: "calendar") {
-                NavigationStack {
-                    CalendarView()
-                }
+            .tabItem {
+                Label("Découvrir", systemImage: "sparkles")
+            }.tag(1)
+
+            NavigationStack {
+                CalendarView(works: works)
             }
-            Tab("Profil", systemImage: "person") {
-                NavigationStack {
-                    ProfilView()
-                }
+            .tabItem {
+                Label("Calendrier", systemImage: "calendar")
+            }.tag(2)
+
+            NavigationStack {
+                ProfilView()
             }
-            Tab("Recherche", systemImage: "magnifyingglass", role: .search) {
-                // Afficher la recherche
-                
-            }
+            .tabItem {
+                Label("Profil", systemImage: "person")
+            }.tag(3)
         }
-        
+
     }
 }
 
