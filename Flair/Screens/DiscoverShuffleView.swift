@@ -38,8 +38,8 @@ struct DiscoverShuffleView: View {
                     .padding(.horizontal)
 
                 VStack(spacing: 8) {
-                    ExplorationPickerType(selectedType: $selectedType)
-                    ExplorationPickerGenre(selectedGenre: $selectedGenre)
+//                    ExplorationPickerType(selectedType: $selectedType)
+//                    ExplorationPickerGenre(selectedGenre: $selectedGenre)
                 }
 
                 VStack {

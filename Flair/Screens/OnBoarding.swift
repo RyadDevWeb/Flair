@@ -66,14 +66,10 @@ struct OnBoarding: View {
                 CharacterQuestionView()
                 
             case .ageRating, .favoriteType:
-                SingleChoiceQuestionView(
-                    question: question
-                )
+                SingleChoiceQuestionView(question: question)
                 
             case .favoriteGenres:
-                MultipleChoicesQuestionView(
-                    question: question
-                )
+                MultipleChoicesQuestionView(question: question)
                 
             case .favoriteWorks:
                 FavoriteWorksQuestionView()
@@ -82,38 +78,22 @@ struct OnBoarding: View {
                 OnboardingSummaryView()
             }
         }
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: .infinity,
-            alignment: .top
-        )
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(.horizontal)
         .padding(.top)
-        .scrollEdgeEffectStyle(
-            .soft,
-            for: .bottom
-        )
+        .scrollEdgeEffectStyle(.soft, for: .bottom)
         .safeAreaBar(edge: .bottom, spacing: 0) {
             VStack(spacing: 8) {
                 if question.kind == .summary {
-                    Button(
-                        "Entrer dans Flair",
-                        action: finishOnboarding
-                    )
+                    Button("Entrer dans Flair", action: finishOnboarding)
                     .buttonStyle(.primary)
                 } else {
-                    Button(
-                        "Continuer",
-                        action: continueOnboarding
-                    )
+                    Button("Continuer", action: continueOnboarding)
                     .buttonStyle(.primary)
                     .disabled(!canContinue)
                     
                     if canSkip {
-                        Button(
-                            "Passer pour le moment",
-                            action: continueOnboarding
-                        )
+                        Button("Passer pour le moment", action: continueOnboarding)
                         .foregroundStyle(.yellowPrimary)
                     }
                 }
@@ -148,8 +128,8 @@ struct OnBoarding: View {
         }
     }
     
-        /// Enregistre les choix effectués durant l'onboarding
-        /// puis indique que celui-ci est terminé.
+    /// Enregistre les choix effectués durant l'onboarding
+    /// puis indique que celui-ci est terminé.
     private func finishOnboarding() {
         appStore.completeOnboarding()
         onCompleted()
@@ -162,38 +142,16 @@ private enum NavigationDirection {
 }
 
 #Preview {
-    OnBoarding(
-        questions: Question.staticQuestions,
-        onCompleted: {}
-    )
-    .environment(
-        AppStore(
-            works: works,
-            user: user
-        )
-    )
-    .frame(
-        maxWidth: .infinity,
-        maxHeight: .infinity
-    )
-    .preferredColorScheme(.dark)
+    OnBoarding(questions: Question.staticQuestions, onCompleted: {})
+        .environment(AppStore(works: works, user: user))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .preferredColorScheme(.dark)
 }
 
 #Preview {
-    OnBoarding(
-        questions: Question.staticQuestions,
-        onCompleted: {}
-    )
-    .environment(
-        AppStore(
-            works: works,
-            user: user
-        )
-    )
-    .frame(
-        maxWidth: .infinity,
-        maxHeight: .infinity
-    )
-    .preferredColorScheme(.light)
+    OnBoarding(questions: Question.staticQuestions, onCompleted: {})
+        .environment(AppStore(works: works, user: user))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .preferredColorScheme(.light)
 }
 

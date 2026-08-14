@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct ProfilView: View {
-
+    
+    @Environment(AppStore.self) private var appStore
+    
     let columns = [
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16),
     ]
-
+    
     var body: some View {
         ScrollView {
-
+            
             VStack(spacing: 24) {
-
-                // Bannière + photo de profil
+                
+                    // Bannière + photo de profil
                 Image("frieren-royal_capital-cover")
                     .resizable()
                     .scaledToFill()
@@ -27,96 +29,97 @@ struct ProfilView: View {
                     .frame(height: 178)
                     .clipped()
                     .overlay(alignment: .bottomLeading) {
-
-                        // Background de la photo de profil
+                        
+                            // Background de la photo de profil
                         Circle()
                             .fill(Color.bg)
                             .frame(width: 100, height: 100)
-
+                        
                             // Photo de profil
                             .overlay {
-                                Image("frieren-id_card")
+                                Image(appStore.user.image)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 100, height: 100)
                                     .clipShape(Circle())
                             }
-
+                        
                             // Bordure
                             .overlay {
                                 Circle()
                                     .stroke(Color.card, lineWidth: 0.5)
                             }
-
+                        
                             // Position photo de profil
                             .offset(x: 20, y: 60)
                     }
-
-                // Pseudo
+                
+                    // Pseudo
                 HStack {
                     Spacer()
-                    Text(userLogged.name)
+                    Text(appStore.user.name)
                     Spacer()
                 }
                 .padding(.trailing, 50)
                 .font(.custom("Archivo-Black", size: 22))
-
-                // Mes découvertes + Mes favoris
+                
+                    // Mes découvertes + Mes favoris
                 VStack(spacing: 24) {
-
-                    // Mes découvertes
+                    
+                        // Mes découvertes
                     WorkDetailTitle(text: "Mes découvertes")
-
+                    
                     LazyVGrid(columns: columns, spacing: 16) {
                         StatsCard(
-                            nbr: 8,
+                            nbr: appStore.user.statOrganization,
                             detail: "Organizations",
-                            backgroundColor: .badgeFilm,
+                            backgroundColor: .badgeFilm
                         )
-
+                        
                         StatsCard(
-                            nbr: 3,
-                            detail: "lieux",
-                            backgroundColor: .badgeSerie,
+                            nbr: appStore.user.statLocation,
+                            detail: "Lieux",
+                            backgroundColor: .badgeSerie
                         )
-
+                        
                         StatsCard(
-                            nbr: 23,
+                            nbr: appStore.user.statCharacter,
                             detail: "Personnages",
-                            backgroundColor: .badgeAnime,
+                            backgroundColor: .badgeAnime
                         )
-
+                        
                         StatsCard(
-                            nbr: 12,
+                            nbr: appStore.user.statChronology,
                             detail: "Chronologie",
-                            backgroundColor: .yellowPrimary,
+                            backgroundColor: .yellowPrimary
                         )
                     }
-
-                    // Mes favoris + Voir plus
+                    
+                        // Mes favoris + Voir plus
                     HStack {
                         WorkDetailTitle(text: "Mes favoris")
                         Spacer()
-
-                        NavigationLink(destination: WorkFavorisGridView()) {
+                        
+                        NavigationLink(
+                            destination: WorkFavorisGridView()
+                        ) {
                             TextButtonVoirPlus()
                         }
                     }
-
-                    // works favorites
+                    
+                        // works favorites
                     ScrollView(.horizontal) {
-                        HStack(spacing: 24) {
-                            ForEach(userLogged.favoriteWorks) { work in
-                                NavigationLink(
-                                    destination: WorkDetailView(work: work)
-                                ) {
-                                    WorkCoverView(work: work)
-                                }
+                        HStack {
+                            ForEach(appStore.user.favoriteWorks) { work in
+                                NavigationWorkCardView(work: work)
                             }
                         }
+                        .frame(height: 200)
                     }
+                    
                 }
                 .padding(.horizontal, 16)
+                
             }
         }
         .ignoresSafeArea()
@@ -129,6 +132,7 @@ struct ProfilView: View {
         Color.bg
         NavigationStack {
             ProfilView()
+                .environment(AppStore(works: works, user: userLogged))
         }
     }
     .ignoresSafeArea()

@@ -12,27 +12,7 @@ struct FavoriteWorkCardView: View {
     let isSelected: Bool
 
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            Image(work.image)
-                .resizable()
-                .scaledToFill()
-                .aspectRatio(contentMode: .fill)
-                .clipped()
-
-            Text("")
-                .frame(height: 30)
-                .padding(.vertical)
-                .frame(maxWidth: .infinity)
-                .background(.black.opacity(0.6))
-                .overlay(alignment: .leading) {
-                    Text(work.title)
-                        .padding(.leading, 8)
-                        .foregroundStyle(.white)
-                        .font(.custom("Archivo-Bold", size: 16))
-                        .frame(minHeight: 30)
-                }
-        }
-        .clipShape(.rect(cornerRadius: 8))
+        WorkCardComponentView(work: work)
         .overlay {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(
@@ -51,8 +31,10 @@ struct FavoriteWorkCardView: View {
 }
 
 #Preview {
-    HStack {
+    HStack(spacing: 24) {
         FavoriteWorkCardView(work: works[0], isSelected: false)
+        FavoriteWorkCardView(work: works[0], isSelected: true)
+
         FavoriteWorkCardView(work: works[1], isSelected: true)
 
     }

@@ -17,3 +17,8 @@ func makeGregorianDate(year: Int, month: Int, day: Int) -> Date {
 
     return date
 }
+
+
+func makeDate(date: Date) -> String {
+    return "\(date.formatted(.dateTime.day(.twoDigits)))/\(date.formatted(.dateTime.month(.twoDigits)))"
+}

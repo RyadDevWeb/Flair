@@ -31,25 +31,13 @@ struct ProfileSummaryCard: View {
                 Text(character.name)
                     .font(.custom("Archivo-Black", size: 26))
                     .textCase(.uppercase)
-
-                Label(
-                    "Profil prêt",
-                    systemImage: "checkmark.circle.fill"
-                )
-                .font(.custom("Archivo-Bold", size: 12))
-                .foregroundStyle(.yellowPrimary)
             }
 
             Spacer()
         }
         .padding(16)
-        .background(Color.card)
-        .clipShape(
-            RoundedRectangle(
-                cornerRadius: 16,
-                style: .continuous
-            )
-        )
+        .background(.card)
+        .clipShape(.rect(cornerRadius: 16))
         .overlay(alignment: .leading) {
             Capsule()
                 .fill(.yellowPrimary)

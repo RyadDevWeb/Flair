@@ -78,7 +78,7 @@ extension ButtonStyle where Self == OnBoardingButtonStyle {
 }
 
 #Preview {
-    VStack(spacing: 16) {
+    VStack(spacing: 24) {
         
         Button("Tout public") {
                 // Action

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkFavorisGridView: View {
     
+    @Environment(AppStore.self) private var appStore
+    
     let columns = [
             GridItem(.flexible()),
             GridItem(.flexible()),
@@ -17,13 +19,14 @@ struct WorkFavorisGridView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(userLogged.favoriteWorks) { work in
+                ForEach(appStore.user.favoriteWorks) { work in
                     NavigationLink(
                         destination: WorkDetailView(
                             work: work
                         )
                     ) {
-                        WorkCoverView(work: work)
+                        WorkCardComponentView(work: work)
+//                        WorkCoverView(work: work)
                     }.navigationTitle("Mes favoris")
                 }
             }
@@ -37,6 +40,7 @@ struct WorkFavorisGridView: View {
             Color.bg
             NavigationStack {
                 WorkFavorisGridView()
+                    .environment(AppStore(works: works, user: userLogged))
             }
         }.ignoresSafeArea()
 }

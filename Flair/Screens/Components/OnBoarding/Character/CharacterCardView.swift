@@ -43,6 +43,7 @@ struct CharacterCardView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
@@ -52,20 +53,6 @@ struct CharacterCardView: View {
 private struct CharacterThumbnailView: View {
     let character: WorkCharacter
     
-    /// Gère la taille à laquelle va être zoomée l'image (les images ont des dimensions différentes)
-    private var scale: CGFloat {
-        guard let image else {
-            return 1
-        }
-        
-        /// Calcul du ratio
-        let ratio = image.size.width / image.size.height
-        
-        return ratio > 0.5
-        ? 1.7
-        : 1
-    }
-
     /// Récupère l'image depuis les Assets.
     private var image: UIImage? {
         UIImage(named: character.cover)
@@ -86,11 +73,16 @@ private struct CharacterThumbnailView: View {
         Color.clear
             .aspectRatio(0.75, contentMode: .fit)
             .overlay(alignment: alignment) {
-                if let image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .scaleEffect(scale, anchor: .top)
+                if let image {                UIKitImageView(image: image)
+                        .aspectRatio(
+                            image.size.width / image.size.height,
+                            contentMode: .fill
+                        )
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .top
+                        )
                 } else {
                     Rectangle()
                         .fill(.gray.opacity(0.2))
@@ -109,11 +101,11 @@ private struct CharacterThumbnailView: View {
     CharacterCardView(character: works[0].characters[0], isSelected: false, action: {  })
         .environment(AppStore(works: works, user: user))
     
-    CharacterCardView(character: works[0].characters[0], isSelected: true, action: {  })
+    CharacterCardView(character: works[0].characters[1], isSelected: true, action: {  })
         .environment(AppStore(works: works, user: user))
     
     CharacterCardView(character: works[1].characters[0], isSelected: false, action: {  })
         .environment(AppStore(works: works, user: user))
-    CharacterCardView(character: works[2].characters[0], isSelected: true, action: {  })
+    CharacterCardView(character: works[2].characters[1], isSelected: true, action: {  })
         .environment(AppStore(works: works, user: user))
 }
