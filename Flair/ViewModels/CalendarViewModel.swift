@@ -10,8 +10,6 @@ import Foundation
 struct CalendarViewModel {
 
     let works: [Work]
-    let type: Types
-    let genre: Genre
 
     static func dateFormatted(date: Date) -> String {
         return "\(date.formatted(.dateTime.day(.twoDigits))) / \(date.formatted(.dateTime.month(.twoDigits)))"
