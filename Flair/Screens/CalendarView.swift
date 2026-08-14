@@ -29,8 +29,8 @@ struct CalendarView: View {
                     NavigationLink {
                         WorkDetailView(work: work)
                     } label: {
-                        CalendarCard(work: work)
-                            .foregroundStyle(Color.white)
+//                        CalendarCard(work: work)
+//                            .foregroundStyle(Color.white)
                     }
                 }
             }
